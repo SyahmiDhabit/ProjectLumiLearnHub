@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+
+        <div> 
+             <label for="fname">Full Name</label>
+             <input type="text" id="fname" name="fname" placeholder="Your Fullname" required>
+        </div>
+
+        <br>
+
+        <div> 
+             <label for="uname">Username</label>
+             <input type="text" id="uname" name="uname" placeholder="Your Username" required>
+        </div>
+
+         <br>
+
+        <div>
+             <label for="age">Age</label>
+             <input type="number" id="age" name="age" min="13" max="30" placeholder="Your Age" required>
+        </div>
+
+        <br>
+
+        <div>
+            <label for="gender">Gender</label>
+
+            <input type="radio" id="female" name="gender" value="Female">Female
+            <input type="radio" id="male" name="gender" value="Male">Male
+        </div>
+
+        <br>
+
+        <div>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+        </div>
+
+        <br>
+
+        <div>
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob" name="dob" required>
+        </div>
+
+        <br>
+
+        <div>
+            <label for="notel" >Phone Number</label>
+            <input type="tel" id="notel" name="notel" placeholder="+601x-xxxxxxx" required>
+        </div>
+
+        <br>
+
+        <div>
+            <label for ="country">Country</label>
+            <select id ="country" name="country">
+                <option value = "Malaysia">Malaysia</option>
+                <option value = "Singapore">Singapore</option>
+                <option value = "Philippine">Philippine</option>
+                <option value = "Others">Others</option>
+            </select>
+        </div>
+
+        <br>
+
+        <div>
+            <label>Bio</label>
+            <textarea id="bio" name="bio" rows="4" cols="50" placeholder="Type your message here..."></textarea>
+        </div>
+
+        <br>
+
+        <div>
+            <input type ="submit" id="proceed" name="proceed">
+            <input type = "reset" id="reset" name="reset">
+        </div>
+    </form>
+</body>
+</html>
