@@ -1,0 +1,88 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #84696f;
+  color: white;
+}
+
+header {
+  background-color: #8b3d3d;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.back-btn {
+  background-color: #5c1e1e;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.profile-icon {
+  background-color: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-image: radial-gradient(circle at 50% 35%, #7b3b3b 25%, #fff 25%);
+  background-size: 100% 100%;
+}
+
+main {
+  padding: 1rem;
+}
+
+h1 {
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem 0;
+  gap: 1rem;
+}
+
+.column {
+  background-color: #e3bfc3;
+  padding: 1rem;
+  border-radius: 10px;
+  width: 30%;
+  min-height: 400px;
+}
+
+.column h2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background-color: #555;
+  color: white;
+  padding: 8px;
+  margin: 10px 0;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+li span.name {
+  flex: 1;
+  margin-left: 10px;
+}
+
+.icon-btns span {
+  margin-left: 10px;
+  cursor: pointer;
+}

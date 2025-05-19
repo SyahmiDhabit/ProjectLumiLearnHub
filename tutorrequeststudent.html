@@ -1,11 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tutor Request: Student</title>
+  <link rel="stylesheet" href="tutorrequeststudent.css"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
-    
+  <header>
+    <button class="back-btn">← BACK TO HOME</button>
+    <div class="profile-icon"></div>
+  </header>
+
+  <main>
+    <h1>Requested Tutor</h1>
+    <div class="container">
+      <!-- Pending Request -->
+      <section class="column">
+        <h2>Pending Request <span class="icon">👤</span></h2>
+        <ul id="pendingList"></ul>
+      </section>
+
+      <!-- Accepted Request -->
+      <section class="column">
+        <h2>Accepted Request <span class="icon">👤</span></h2>
+        <ul id="acceptedList"></ul>
+      </section>
+
+      <!-- Rejected Request -->
+      <section class="column">
+        <h2>Rejected Request <span class="icon">👤✖</span></h2>
+        <ul id="rejectedList"></ul>
+      </section>
+    </div>
+  </main>
+
+  <script >
+    const pendingList = document.getElementById("pendingList");
+const acceptedList = document.getElementById("acceptedList");
+const rejectedList = document.getElementById("rejectedList");
+
+const pendingTutors = [
+  "Subiyamin", "Ahmad Manap", "Anita Kushair", "Amirul Hakim",
+  "Quratul Ain", "Fakhrul Razi", "Khaleed Kashmiri",
+  "Naim Ismail", "Abu Yamin", "Najwa Qismina"
+];
+
+const acceptedTutors = ["Shahrul Bakti", "Ghazwan Hashim", "Fathma Ilya", "Falisya Ali"];
+const rejectedTutors = ["Abdul Razak", "Syakir Saadom", "Syafiq Saidin"];
+
+function createListItem(name, index, status) {
+  const li = document.createElement("li");
+  li.innerHTML = `
+    <span>${index + 1}</span>
+    <span class="name">${name}</span>
+    ${status === "pending" ? `
+      <div class="icon-btns">
+        <span title="Info">ℹ️</span>
+        <span title="Accept" onclick="acceptTutor(${index})">✅</span>
+        <span title="Reject" onclick="rejectTutor(${index})">❌</span>
+      </div>
+    ` : status === "accepted" ? `
+      <div class="icon-btns">
+        <span title="Message">💬</span>
+        <span title="Call">📞</span>
+      </div>
+    ` : `
+      <div class="icon-btns">
+        <span title="Info">ℹ️</span>
+      </div>
+    `}
+  `;
+  return li;
+}
+
+function renderLists() {
+  pendingList.innerHTML = "";
+  acceptedList.innerHTML = "";
+  rejectedList.innerHTML = "";
+
+  pendingTutors.forEach((name, i) => {
+    pendingList.appendChild(createListItem(name, i, "pending"));
+  });
+
+  acceptedTutors.forEach((name, i) => {
+    acceptedList.appendChild(createListItem(name, i, "accepted"));
+  });
+
+  rejectedTutors.forEach((name, i) => {
+    rejectedList.appendChild(createListItem(name, i, "rejected"));
+  });
+}
+
+function acceptTutor(index) {
+  acceptedTutors.push(pendingTutors[index]);
+  pendingTutors.splice(index, 1);
+  renderLists();
+}
+
+function rejectTutor(index) {
+  rejectedTutors.push(pendingTutors[index]);
+  pendingTutors.splice(index, 1);
+  renderLists();
+}
+
+renderLists();
+
+  </script>
 </body>
 </html>

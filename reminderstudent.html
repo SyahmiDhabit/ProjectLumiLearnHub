@@ -3,9 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Reminder: Student</title>
+    <link rel="stylesheet" href="reminderstudent.css">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
-    
+    <div class="container">
+        <button class="back-button">BACK TO HOME</button>
+        <h1>Reminder</h1>
+        <table>
+            <tr>
+                <th>#</th>
+                <th>Subject</th>
+                <th>Teacher</th>
+                <th>Time</th>
+                <th>Date</th>
+                <th>Notification</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Computer Science</td>
+                <td>Zanariah Ali</td>
+                <td>2:30pm</td>
+                <td>17.05.25</td>
+                <td><button class="reminder-btn" onclick="setReminder(1)">🔔</button></td>
+            </tr>
+        </table>
+        <div class="buttons">
+            <button onclick="setCalendarReminder()">Set in my Calendar</button>
+            <button onclick="setAlarm()">Set in my Alarm</button>
+        </div>
+        <div class="quote">
+            <p>SET YOUR GOALS HIGH AND DON'T STOP TILL YOU GET THERE</p>
+        </div>
+    </div>
+    <script>
+        function setReminder(id) {
+    alert("Reminder set for Subject #" + id);
+}
+
+function setCalendarReminder() {
+    alert("Reminder added to your calendar!");
+}
+
+function setAlarm() {
+    alert("Alarm has been set for your reminder!");
+}
+
+
+    </script>
 </body>
 </html>
