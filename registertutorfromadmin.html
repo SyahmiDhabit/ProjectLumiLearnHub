@@ -4,8 +4,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="register.css" type ="text/css">
 </head>
+</html>
 <body>
-    
+    <div class="bar">
+    <button class="back-btn">← BACK</button>
+
+    <div class="right-group">
+      <span class="text">Already have an account?</span>
+      <button class="login-btn">LOG IN</button>
+    </div>
+  </div>
+
+    <h1> ABOUT YOU </h1>
+
+   <form>
+  <div>
+    <label for="fname">Full Name</label>
+    <input type="text" id="fname" name="fname" placeholder="Your Fullname" required>
+  </div>
+
+  <div>
+    <label for="uname">Username</label>
+    <input type="text" id="uname" name="uname" placeholder="Your Username" required>
+  </div>
+
+  <div>
+    <label for="age">Age</label>
+    <input type="number" id="age" name="age" min="13" max="30" placeholder="Your Age" required>
+  </div>
+
+  <div>
+    <label for="dob">Birth of Date</label>
+    <input type="date" id="dob" name="dob" required>
+  </div>
+
+  <div>
+    <label>Gender</label>
+    <div class="gender-options">
+      <input type="radio" id="male" name="gender" value="Male"> <label for="male">Male</label>
+      <input type="radio" id="female" name="gender" value="Female"> <label for="female">Female</label>
+    </div>
+  </div>
+
+  <div>
+     <label for="notel">Phone Number</label>
+     <input type="tel" id="notel" name="notel" placeholder="+601x-xxxxxxx" required>
+  </div>
+
+  <div>
+     <label for="country">Country</label>
+      <select id="country" name="country">
+       <option value="Malaysia">Malaysia</option>
+       <option value="Singapore">Singapore</option>
+       <option value="Philippine">Philippine</option>
+       <option value="Others">Others</option>
+      </select>
+  </div>
+
+<div class="full-width">
+  <label for="bio">Bio</label>
+  <textarea id="bio" name="bio" placeholder="Type your message here..."></textarea>
+</div>
+
+<div class="full-width" style="text-align: center;">
+  <span>Proceed to register as a Student?</span>
+  <input type="submit" id="submit" value="PROCEED">
+</div>
+  
+</form>
 </body>
+
+<footer>
+  2025 LumiLearnHub. All rights reserved.
+</footer>
+
 </html>
