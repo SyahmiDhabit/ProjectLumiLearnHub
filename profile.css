@@ -1,0 +1,146 @@
+/* Base */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #7c5b5b;
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+/* Top Bar */
+.bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #8b3d3d;
+  padding: 15px 25px;
+  border-radius: 0 0 20px 20px;
+}
+
+.back-btn,
+.logout-btn,
+.admin-btn {
+  background-color: #4a1414;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 15px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.back-btn:hover,
+.logout-btn,
+.admin-btn {
+  background-color: #6b1e1e;
+}
+
+.right-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.text {
+  color: #fff;
+  font-size: 14px;
+}
+
+/* Header title */
+h1 {
+  text-align: center;
+  background-color: #8b3d3d;
+  padding: 14px 50px;
+  border-radius: 20px;
+  border: 3px solid #8b3d3d;
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+  width: max-content;
+  margin: 30px auto 20px auto;
+}
+
+/* Form Box */
+form {
+  background-color: #913d3d;
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 30px;
+  border-radius: 15px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Full width items */
+form div.full-width {
+  grid-column: span 2;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="date"],
+input[type="tel"],
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: #e8c3c3;
+  font-size: 14px;
+  color: #000;
+}
+
+/* Gender radio */
+.gender-options {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  color: white;
+}
+
+/* Bio textarea */
+textarea {
+  resize: none;
+  height: 120px;
+}
+
+/* Submit Button */
+#submit {
+  background-color: #4a1414;
+  color: white;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  grid-column: 2;
+  justify-self: end;
+  transition: background-color 0.3s ease;
+}
+
+#submit:hover {
+  background-color: #6b1e1e;
+}
+
+/* Footer */
+footer {
+  background-color: #8b3d3d;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-weight: bold;
+  border-radius: 20px 20px 0 0;
+  margin-top: 30px;
+}
