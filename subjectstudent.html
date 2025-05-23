@@ -1,11 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Study Goals Tracker</title>
+  <link rel="stylesheet" href="subjectstudent.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
-    
+  <div class="header">
+    <h1>📘 Weekly Study Goals</h1>
+  </div>
+
+  <div class="goals-container">
+    <div class="left-panel">
+      <h2>Subjects Progress</h2>
+      <div class="goal-item">
+        <label>Computer Science</label>
+        <div class="progress-bar"><div class="progress" style="width: 70%"></div></div>
+      </div>
+      <div class="goal-item">
+        <label>Math</label>
+        <div class="progress-bar"><div class="progress" style="width: 50%"></div></div>
+      </div>
+      <div class="goal-item">
+        <label>Biology</label>
+        <div class="progress-bar"><div class="progress" style="width: 40%"></div></div>
+      </div>
+      <div class="goal-item">
+        <label>History</label>
+        <div class="progress-bar"><div class="progress" style="width: 60%"></div></div>
+      </div>
+    </div>
+
+    <div class="right-panel">
+      <h2>Weekly Goal</h2>
+      <p>✅ Complete 3 Past Year Papers<br>✅ Review All Lecture Slides<br>✅ Finish Project Proposal</p>
+
+      <div class="quote-box">
+        "Push yourself, because no one else is going to do it for you."
+      </div>
+
+      <div class="button-area">
+        <button><i class="fas fa-plus"></i> Add Goal</button>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

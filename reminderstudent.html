@@ -1,56 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reminder: Student</title>
-    <link rel="stylesheet" href="reminderstudent.css">
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reminder Schedule</title>
+  <link rel="stylesheet" href="reminderstudent.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-    <div class="container">
-        <button class="back-button">BACK TO HOME</button>
-        <h1>Reminder</h1>
+  <div class="header">
+    <button>&larr; BACK TO HOME</button>
+  </div>
+
+  <div class="container">
+    <h2>Reminder</h2>
+    <div class="reminder-box">
+      <div class="reminder-table">
+        <div class="icons">
+          <i class="fas fa-cog"></i>
+          <i class="fas fa-pen"></i>
+          <i class="fas fa-plus"></i>
+          <i class="fas fa-clock"></i>
+          <i class="fas fa-bell"></i>
+          <i class="fas fa-bell-slash"></i>
+        </div>
         <table>
+          <thead>
             <tr>
-                <th>#</th>
-                <th>Subject</th>
-                <th>Teacher</th>
-                <th>Time</th>
-                <th>Date</th>
-                <th>Notification</th>
+              <th>#</th>
+              <th>Subject</th>
+              <th>Lecturer</th>
+              <th>Time</th>
+              <th>Date</th>
             </tr>
-            <tr>
-                <td>1</td>
-                <td>Computer Science</td>
-                <td>Zanariah Ali</td>
-                <td>2:30pm</td>
-                <td>17.05.25</td>
-                <td><button class="reminder-btn" onclick="setReminder(1)">🔔</button></td>
-            </tr>
+          </thead>
+          <tbody id="reminderBody">
+            <tr><td>1</td><td>Computer Science</td><td>Zanariah Ali</td><td>2.30pm</td><td>17.05.25</td></tr>
+            <tr><td>2</td><td>Chemistry</td><td>Aliya Najwa</td><td>9.30pm</td><td>17.05.25</td></tr>
+            <tr><td>3</td><td>History</td><td>Zain Saidin</td><td>11.30am</td><td>17.05.25</td></tr>
+            <tr><td>4</td><td>Math</td><td>Naim Mazlan</td><td>11.30am</td><td>19.05.25</td></tr>
+            <tr><td>5</td><td>Biology</td><td>Norhayati Abu</td><td>3.00pm</td><td>19.05.25</td></tr>
+            <tr><td>6</td><td>Science</td><td>Aliya Najwa</td><td>4.30pm</td><td>19.05.25</td></tr>
+            <tr><td>7</td><td>Computer Science</td><td>Zanariah Ali</td><td>10.30am</td><td>20.05.25</td></tr>
+          </tbody>
         </table>
-        <div class="buttons">
-            <button onclick="setCalendarReminder()">Set in my Calendar</button>
-            <button onclick="setAlarm()">Set in my Alarm</button>
-        </div>
+      </div>
+
+      <div class="right-panel">
+        <button class="calendar-btn">Set in my Calendar</button>
+        <button class="calendar-btn">Set in my Alarm</button>
         <div class="quote">
-            <p>SET YOUR GOALS HIGH AND DON'T STOP TILL YOU GET THERE</p>
+          SET YOUR GOALS<br />
+          HIGH<br />
+          <span>AND DON’T STOP</span><br />
+          TILL YOU GET THERE
         </div>
+      </div>
     </div>
-    <script>
-        function setReminder(id) {
-    alert("Reminder set for Subject #" + id);
-}
-
-function setCalendarReminder() {
-    alert("Reminder added to your calendar!");
-}
-
-function setAlarm() {
-    alert("Alarm has been set for your reminder!");
-}
-
-
-    </script>
+  </div>
 </body>
 </html>
