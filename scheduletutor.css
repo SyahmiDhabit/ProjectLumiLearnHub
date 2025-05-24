@@ -152,6 +152,11 @@ body {
   background-color: #e5a9a9;
 }
 
+.schedule-table th {
+  font-weight: bold;
+  background-color: #e5a9a9;
+}
+
 .action-icons {
   margin-top: 20px;
   display: flex;

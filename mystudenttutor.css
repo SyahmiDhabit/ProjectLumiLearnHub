@@ -78,6 +78,19 @@ body {
   font-weight: bold;
 }
 
+.menu-chosen {
+  background-color: #da6666;
+  padding: 25px ;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  color: #000000;
+  font-weight: bold;
+  border: 7px solid #621818;
+}
+
 .menu-icon {
   margin-left: auto;
   width: 24px;
@@ -108,3 +121,45 @@ body {
   font-weight: bold;
   font-size: 17px;
 }
+
+.schedule-tittle {
+  color: #f5eded;
+  font-weight: bold;
+  background-color: #ac5656;
+  padding: 25px;
+  border-radius: 20px;
+}
+
+.title-size {
+ font-size: 30px;
+}
+
+.schedule-table {
+  width: 100%;
+  color: black;
+  border-collapse: collapse;
+  background-color: #e1bfbf;
+  border: 3px solid black;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.schedule-table th,
+.schedule-table td {
+  border: 1px solid black;
+  padding: 10px;
+  text-align: center;
+}
+
+.schedule-table th {
+  background-color: #e8bebe;
+  font-weight: bold;
+}
+
+.schedule-table th {
+  font-weight: bold;
+  background-color: #e5a9a9;
+}
+
+
