@@ -3,9 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Schedule Tutor</title>
 </head>
 <body>
-    
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tutor Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="scheduletutor.css" />
+</head>
+<body>
+  <div class="header">
+    <div class="brand">LumiLearnHub</div>
+    <div class="welcome">WELCOME TUTOR!</div>
+    <div class="profile-icon"></div>
+  </div>
+
+  <div class="container">
+    <div class="sidebar">
+      <div class="menu-title">MENU OPTION</div>
+      <div class="menu-chosen">
+        <span>My Schedule</span>
+        <img src="image/calendaricon.png" alt="calender icon" class="menu-icon">
+      </div>
+      <div class="menu-item">
+        <span>My Student</span>
+        <img src="image/usericon.png" alt="user icon" class="menu-icon">
+      </div>
+      <div class="menu-item">
+        <span>Reminder</span>
+        <img src="image/clockicon.png" alt="clock icon" class="menu-icon">
+      </div>
+      <div class="menu-item">
+        <span>Student Request</span>
+        <img src="image/requesticon.png" alt="request icon" class="menu-icon">
+      </div>
+      <div class="menu-item">
+        <span>Feedback</span>
+        <img src="image/feedbackicon.png" alt="feedback icon" class="menu-icon  ">
+      </div>
+    </div>
+
+    <div class="main-content">
+      <div class="top-buttons">
+        <button class="top-btn">Availability</button>
+        <button class="top-btn">Application for Subject Tutoring</button>
+      </div>
+
+<table class="schedule-table">
+      <thead>
+        <tr>
+          <th>Time<br>Day</th>
+          <th>8.30am - 10.30am</th>
+          <th>12.30pm - 2.30pm</th>
+          <th>4.30pm - 6.30pm</th>
+          <th>9.30pm - 10.30pm</th>
+          <th>11.30pm - 12.30am</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Sunday</td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>Monday</td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>Tuesday</td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>Wednesday</td><td></td><td></td><td></td><td></td><td></td></tr>
+        <tr><td>Thursday</td><td></td><td></td><td></td><td></td><td></td></tr>
+      </tbody>
+    </table>
+
+    <div class="action-icons">
+      <i class="fas fa-cog"></i>
+      <i class="fas fa-edit"></i>
+      <i class="fas fa-plus-circle"></i>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
