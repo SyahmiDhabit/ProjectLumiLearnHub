@@ -1,42 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Interface</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LumiLearnHub - Student Interface</title>
+  <link rel="stylesheet" href="studentinterface.css" />
 </head>
 <body>
-    <header>
-        <div>
-        <h2>LumiLearnHub</h2>
-        <h3><a href="studentForm.html"></a><img src = "image/PpLogo.jpg" alt="profile"> </h3>
-        </div>
-        <h1>WELCOME STUDENT!</h1>
-        <article>We’re excited to have you here. This is your space to explore, learn, and grow at your own pace. You can find the right tutors, book sessions that suit your schedule, and keep track of your learning progress all in one convenient place. Whether you’re brushing up on a subject or aiming for top scores, LumiLearnHub is here to support every step of your journey. Let’s make the most of your time here and reach your goals together!</article>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="exploresubject.html">Explore Subject</a></li>
-            <li><a href="findtutor.html">Find a Tutor</a></li>
-            <li><a href="toptutor.html">Top Tutor</a></li>
-        </ul>
-    </nav>
-    <nav>
-        <ul>
-            <li><a href="schedulestudent.html">My Schedule</a></li>
-            <li><a href="subjectstudent.html">My Subject</a></li>
-            <li><a href="feedbackstudent.html">Feedback</a></li>
-        </ul>
-    </nav>
-    <div>
-        <h3>Tutor Suggestion</h3>
-        <nav>
-        <ul>
-            <li><a href="schedulestudent.html">Tutor Request</a></li>
-            <li><a href="subjectstudent.html">Reminder</a></li>
-        </ul>
-    </nav>
+  <div class="container">
+    <div class="header">
+      <div class="logo">LumiLearnHub</div>
+      <img src="image/LoginUser.png" alt="User Icon" class="user-icon">
     </div>
-     
+
+    <h1 class="title">WELCOME STUDENT!</h1>
+    <p class="intro">
+      We’re excited to have you here. This is your space to explore, learn, and grow at your own pace. 
+      You can find the right tutors, book sessions that suit your schedule, and keep track of your learning 
+      progress all in one convenient place. Whether you’re brushing up on a subject or aiming for top scores, 
+      LumiLearnHub is here to support every step of your journey. Let’s make the most of your time here and 
+      reach your goals together!
+    </p>
+
+    <div class="top-buttons">
+      <button><img src="image/subject.png" alt=""> Explore Subject</button>
+      <button><img src="image/AddTutor.png" alt=""> Find a Tutor</button>
+      <button><img src="image/toptutor.png" alt=""> Top Tutors</button>
+    </div>
+
+    <div class="main-section">
+      <div class="left-column">
+        <h3>Tutor Suggestions</h3>
+        <ul class="tutor-list">
+          <li>Subiyamin bin Sulaiman</li>
+          <li>Khaleed Kashmiri</li>
+          <li>Muhammad Sumbul</li>
+          <li>Ismail Al Khanabawi</li>
+          <li>Fakhrul Razi</li>
+        </ul>
+      </div>
+
+      <div class="middle-column">
+        <button class="small-button">Tutor Request</button>
+        <button class="small-button">Reminder</button>
+      </div>
+
+      <div class="right-column">
+        <button class="big-button">📅 My Schedule</button>
+        <button class="big-button">📖 My Subject</button>
+        <button class="big-button">⭐ Feedback</button>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

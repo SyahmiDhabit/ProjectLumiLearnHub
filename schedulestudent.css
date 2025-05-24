@@ -32,7 +32,7 @@ h1 {
   max-width: 800px;
   margin: 0 auto 30px;
   font-size: 1rem;
-  line-height: 1.6;
+  line-height: 1.6; 
 }
 
 .button-group {
@@ -42,9 +42,9 @@ h1 {
 }
 
 .button-group button {
-  background-color: #e4e4e4;
+  background-color: #f8f5f5;
   color: black;
-  padding: 12px 18px;
+  padding: 18px 60px;
   border: none;
   border-radius: 10px;
   font-weight: bold;

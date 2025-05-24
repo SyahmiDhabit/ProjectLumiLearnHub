@@ -1,0 +1,139 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #9b5959;
+  color: white;
+}
+
+.container {
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  background-color: #e4bdbd;
+  color: black;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-size: 1.2rem;
+}
+
+.user-icon {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+
+.title {
+  text-align: center;
+  font-size: 2rem;
+  text-shadow: 1px 1px black;
+  margin: 20px 0;
+}
+
+.intro {
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.top-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+
+.top-buttons button {
+  background-color: #f8f6f6;
+  border: none;
+  padding: 18px 60px;
+  border-radius: 10px;
+  font-weight: bold;
+  color: black;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.top-buttons button img {
+  width: 20px;
+  margin-right: 10px;
+}
+
+.main-section {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.left-column {
+  flex: 1;
+  background-color: #7a3e3e;
+  padding: 15px;
+  border-radius: 12px;
+}
+
+.left-column h3 {
+  margin-bottom: 10px;
+}
+
+.tutor-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.tutor-list li {
+  background-color: #a25959;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+
+.middle-column {
+  flex: 0.5;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: center;
+}
+
+.small-button {
+  background-color: #f27878;
+  color: black;
+  font-weight: bold;
+  border: none;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.right-column {
+  flex: 0.8;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: center;
+}
+
+.big-button {
+  background-color: #ef8b8b;
+  color: black;
+  font-weight: bold;
+  border: none;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 2px 2px 5px #00000050;
+}
