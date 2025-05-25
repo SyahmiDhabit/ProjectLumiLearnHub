@@ -1,16 +1,9 @@
-/* General Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
 body {
   font-family: Arial, sans-serif;
   background-color: #7f4e4e;
-  margin: 0;
-  padding: 0;
+  padding-bottom: 80px;
+   margin: 0; /* Add this */
+  padding-top: 0; /* Optional, to be safe */
 }
 
 /* Top Bar */
@@ -23,8 +16,8 @@ body {
   border-radius: 0 0 20px 20px;
 }
 
-.back-btn,
-.login-btn {
+.back-btn
+ {
   background-color: #4a0b0b;
   color: white;
   border: none;
@@ -39,9 +32,10 @@ body {
   align-items: center;
   gap: 10px;
 }
+
 header{
     color: aliceblue;
-    
+    font-weight: bold;
 }
 label{
     color: aliceblue;
@@ -55,7 +49,7 @@ nav ul {
     display: flex;
     justify-content: space-between;
     padding: 1rem 2rem;
-    background-color: #7e3d3c;
+   
 }
 
 nav ul li a {
@@ -76,21 +70,23 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80vh;
+    height: 57vh;
     background-color: #843e3b;
-    padding: 20px;
+    padding: 27px;
     border-radius: 15px;
-    width: 650px;
+    width: 500px;
     box-shadow: 0 0 10px rgba(0,0,0,0.3);
     text-align: center;
+    margin-top: -100px;
+
 }
 
 article.form {
     background-color: #a55252;
     padding: 20px;
-    margin-top:5%;
+    margin-top:-5%;
     border-radius: 15px;
-    width: 400px;
+    width: 390px;
     box-shadow: 0 0 10px rgba(0,0,0,0.3);
     text-align: center;
 }
@@ -118,30 +114,25 @@ header.sign {
 }
 
 /* Input Fields */
-input[type="email"],
 input[type="password"],
 input[type="text"] {
-    width: 100%;
+    width: 90%;
     padding: 0.7rem;
     margin-bottom: 1rem;
     border: none;
     border-radius: 5px;
 }
-
-/* Register As */
 label {
     font-weight: bold;
     display: block;
     margin-bottom: 0.5rem;
 }
 
-.register{
-    background-color: #4a0b0b;
-    border-radius: 200px;
+.status{
     margin: auto;
-    margin-bottom: 4px;
     padding: 6px;
     width: 50%;
+    margin-bottom: -5%;
 }
 article nav ul {
     justify-content: center;
@@ -149,14 +140,13 @@ article nav ul {
 }
 
 article nav ul li a  {
-    background-color: #a55252;
+    background-color: #4a0b0b;
     padding: 0.7rem 1.2rem;
     border-radius: 10px;
-  
 }
 
 article nav ul li a:hover {
-    background-color: #4a0b0b;
+    background-color:  #a55252;
 }
 
 /* Footer */

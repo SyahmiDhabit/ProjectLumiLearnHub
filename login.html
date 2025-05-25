@@ -4,40 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-     <nav>
-        <ul>
-            <img src="" >
-            <li><a href="">← Back To Home</a></li>
-        </ul>
-    </nav>
-    <label>Don't have any account, new member</label>
-     <nav>
-        <ul>
-            <li><a href="">SIGN UP</a></li>
-        </ul>
-    </nav>
+    <link rel="stylesheet" href="login.css" type="text/css">
+
+     
 </head>
 <body>
-    <section>
-        <article>
+    <div class="bar">
+    <button class="back-btn">← BACK TO HOME</button>
 
-            <header class="sign up">LOG IN</header>
+    <div class="right-group">
+      <label class="text">Don't have any account? new member</label>
+      <button class="signup-btn">SIGN UP</button>
+    </div>
+  </div>
+  <div class="center-wrapper">
+     <section>
+        <article >
 
-            <div>
+            <div>            
+                <header class="sign">LOG IN</header>
+            </div>
+
+            <article class="form">
+                <div>
                 <p>Email Address or Username</p>
                 <input type="text" id="email&Username" required>
 
                 <p>Password</p>
                 <input type="password" id="password" required>
-
-                <nav>
-                    <ul>
-                        <li><a href="">Forget Password?</a></li>
-                    </ul>
-                </nav>
             </div>
         
-            <div>
+            </article>
+            
+            <div class="status">
                 <p>I am a........</p>
             </div>
 
@@ -48,9 +47,10 @@
                 </ul>
             </nav>
         </article>
-    </section>
-    <footer>
-        <p>2025 LumiLearnHub. All rights reserved.</p>
+    </section></div>
+   
+    <footer >
+        <p class="footer">2025 LumiLearnHub. All rights reserved.</p>
     </footer>
 </body>
 </html>
