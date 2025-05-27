@@ -1,4 +1,9 @@
-/* Base */
+.up-bar{
+    background-color: #a55252;
+    padding: 10px 20px;
+    border-radius: 0 0 20px 20px;
+}
+
 body {
   font-family: Arial, sans-serif;
   background-color: #7c5b5b;
@@ -6,128 +11,94 @@ body {
   padding: 0;
 }
 
-
-/* Top Bar */
-.bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #a55252;
-  padding: 10px 20px;
-  border-radius: 0 0 20px 20px;
+.btn-back{
+    background-color: #4a1414;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
 }
 
-
-
-.back-btn {
-  background-color: #4a1414;
-  color: white;
-  border: none;
-  padding: 10px 25px;
-  border-radius: 20px;
-  cursor: pointer;
-  font-weight: bold;
-  font-size: 14px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  transition: background-color 0.3s ease;
-}
-
-.back-btn:hover {
+.btn-back:hover {
   background-color: #6b1e1e;
+  font-size: small;
+  font-weight: bold;
 }
 
-/* Profile Card */
 .profile-card {
   display: flex;
   background-color: #913d3d;
   border-radius: 15px;
   padding: 30px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  gap: 30px;
+  gap: 30px; /* Bagi jarak dengan right section*/
   margin-top: 30px;
+  font-weight: bold;
 }
 
 /* Left Section */
 .left-section {
   flex: 1;
-  min-width: 280px;
   text-align: center;
-  border-right: 5px solid #b46767;
-  padding-right: 20px;
+  border-right: 5px solid #b46767; /* tambah garis ditengah tu utk pisahkan*/
 }
-
-.profile-image {
-  width: 200px;
-  height: 200px;
-  background-color: #d9d9d9;
-  border-radius: 50%;
-  margin: 0 auto 20px;
-  position: relative;
-  overflow: hidden;
-}
-
-.profile-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
 .left-section p {
   font-size: 16px;
   margin: 5px 0;
 }
 
-/* Right Section */
+.profile-img {
+  width: 200px;
+  height: 200px;
+  background-color: #d9d9d9;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  overflow: hidden; /* hide segi empat */
+}
+
+.profile-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .right-section {
   flex: 2;
-  padding-left: 20px;
-  display: flex;
-  flex-direction: column;
   justify-content: center;
-  gap: 12px;
-  position: relative;
+  gap: 15px; /* jarak antara setiap info */
 }
 
 .right-section p {
   font-size: 16px;
-  margin: 0;
-  padding-bottom: 8px;
-  border-bottom: 3px solid #b46767;
-  line-height: 1.5;
+  line-height: 1.6;
+  color: black;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #b46767;
 }
 
-.gear-icon {
-  position:relative;
-  top: -10px;
-  left: -10px;
-  font-size: 24px;
+
+.btn-logout,
+.btn-admin{
+    background-color: #4a1414;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
 }
 
-/* Button Group */
-.button-group {
-  margin-top: 15px;
-  display: flex;
-  gap: 15px;
-}
-
-.logout-btn,
-.admin-btn {
-  background-color: #4a1414;
-  color: white;
-  border: none;
-  padding: 10px 25px;
-  border-radius: 15px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.logout-btn:hover,
-.admin-btn:hover {
+.btn-logout:hover,
+.btn-admin:hover {
   background-color: #6b1e1e;
+  font-size: small;
+  font-weight: bold;
 }
+
 
 footer {
   background-color: #a55252;
@@ -135,10 +106,14 @@ footer {
   text-align: center;
   padding: 10px;
   font-weight: bold;
-  border-radius: 0 0 20px 20px;
+  border-radius: 20px 20px 0 0 ;
   margin-top: 30px;
   width: 100vw;            /* Make footer span full width of the viewport */
   position: fixed;         /* Stick it to the bottom */
   bottom: 0;
-  left: 0;
 }
+
+
+
+
+
