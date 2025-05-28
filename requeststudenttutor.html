@@ -1,11 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tutor Dashboard</title>
+  <link rel="stylesheet" href="requeststudenttutor.css" />
 </head>
 <body>
-    
+  <div class="header">
+    <div class="brand">LumiLearnHub</div>
+    <div class="welcome">WELCOME TUTOR!</div>
+    <div class="profile-icon"></div>
+  </div>
+
+  <div class="container">
+    <div class="sidebar">
+      <div class="menu-title">MENU OPTION</div>
+      <div class="menu-item"> <span>My Schedule</span> <img src="image/calendaricon.png" alt="calender icon" class="menu-icon"> </div>
+      <div class="menu-item"> <span>My Student</span> <img src="image/usericon.png" alt="user icon" class="menu-icon"> </div>
+      <div class="menu-item"> <span>Reminder</span> <img src="image/clockicon.png" alt="clock icon" class="menu-icon"> </div>
+      <div class="menu-chosen"> <span>Student Request</span> <img src="image/requesticon.png" alt="request icon" class="menu-icon"> </div>
+      <div class="menu-item"> <span>Feedback</span> <img src="image/feedbackicon.png" alt="feedback icon" class="menu-icon"> </div>
+    </div>
+
+    <div class="main-content">
+      <div class="top-buttons">
+        <button class="top-btn">Availability</button>
+        <button class="top-btn">Application for Subject Tutoring</button>
+      </div>
+
+      <div class="requests">
+        <div class="request-section">
+          <div class="section-header">Pending Request <img src="image/pendinguser.png" class="menu-icon"></div>
+          <div class="request-list">
+            <div class="request-item">
+              <span class="num">1</span>
+              <button class="info-btn">i</button>
+              <span class="name">Syaza Afifi</span>
+              <img src="image/accept.png" class="action-icon">
+              <img src="image/reject.png" class="action-icon">
+            </div>
+          </div>
+        </div>
+
+        <div class="request-section">
+          <div class="section-header">Accepted Request <img src="image/adduser.png" class="menu-icon"></div>
+          <div class="request-list">
+            <div class="request-item">
+              <span class="num">1</span>
+              <span class="name">Daniel Amin</span>
+              <img src="image/chat.png" class="action-icon">
+              <img src="image/call.png" class="action-icon">
+            </div>
+          </div>
+        </div>
+
+        <div class="request-section">
+          <div class="section-header">Rejected Request <img src="image/rejectuser.png" class="menu-icon"></div>
+          <div class="request-list">
+            <div class="request-item">
+              <span class="num">1</span>
+              <span class="name">Abdul Aziz</span>
+              <button class="info-btn">i</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
