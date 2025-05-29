@@ -1,0 +1,74 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #7f4e4e;
+  padding-bottom: 80px;
+   margin: 0; /* Add this */
+  padding-top: 0; /* Optional, to be safe */
+}
+
+/* Top Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    background-color: #AC5656;
+    border-radius: 0px 0px 20px 20px;
+}
+
+.navleft h1 {
+    margin: 0;
+    font-size: 24px;
+    background-color: aliceblue;
+    color: black;
+    padding: 10px 10px;
+    border-radius: 0px 0px 0px 20px;
+}
+.navcenter h1 {
+    margin: 0;
+    font-size: 24px;
+    color: white;
+    font-weight: bolder;
+    font-size: 30px;
+}
+.navright  {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  
+}
+.social-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 70%;
+}
+
+.Menu ul {
+  list-style: none;      /* remove bullets */
+  padding: 35px;
+  margin: 0;
+  display: flex;         /* horizontal layout */
+  justify-content: center; /* center items (optional) */
+  gap: 110px;             /* space between items */
+}
+
+.Menu li {
+  display: inline-block;
+}
+
+.Menu a {
+  text-decoration: none;
+  color: black;
+   font-weight: 900;
+  padding: 20px 40px;
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: #E97979;
+}
+.Menu li:first-child a {
+     padding-bottom: 16px;
+}
+.Menu a:hover {
+  background-color: #621818;
+  color: white;
+}
