@@ -106,35 +106,3 @@ body {
   background-color: #621818;
   color: white;
 }
-
-.searchbar {
-  display: flex;
-  justify-content: center;  /* center children horizontally */
-  gap: 10px;                /* spacing between input and buttons */   
-  height: 30px;     
-  padding: 10px;  
-  margin-left: -215px;
-}
-.searchUser {
-  width: 350px;
-  height: 30px;
-  border-radius: 10px;
-}
-
-button{
-  border-radius: 10px 10px;
-  background-color: #621818;
-  color: white;
-  width: 100px;
-}
-.result-box {
-  width: 63%;               /* Wide enough to stretch */
-  background-color: #f4dada;
-  height: 370px;
-  border-radius: 10px;
-  padding: 20px;
-  color: black;
-  position: relative;
-  left: 40.4%;                /* Move box's left edge to center */
-  transform: translateX(-25%);  /* Shift it slightly left (not full -50%) */
-}
