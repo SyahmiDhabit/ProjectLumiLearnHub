@@ -9,13 +9,13 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #ac5656;
+  background-color: #c43636;
   padding: 10px 20px;
   border-bottom-right-radius: 20px;
   border-bottom-left-radius: 20px;
   border: solid 3px;
   border-top: none;
-  border-color: #621818;
+  border-color: #a62121;
 }
 
 .brand {
