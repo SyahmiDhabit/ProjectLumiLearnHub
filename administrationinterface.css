@@ -106,3 +106,51 @@ body {
   background-color: #621818;
   color: white;
 }
+
+.container {
+      display: flex;
+      justify-content: center;
+      gap: 22px;
+      margin-top: 60px;
+      margin-left: 210px;
+    }
+
+    .card-box-tutor {
+      background-color: #A14C4C;
+      padding: 8px 47px;
+      margin-right: 30px;
+      border-radius: 10px;
+      width: 350px;
+    }
+    .card-box-student {
+      background-color: #A14C4C;
+      padding: 8px 60px;
+      margin-right: 38px;
+      border-radius: 10px;
+      width: 350px;
+    }
+
+    h2 {
+      color: aliceblue;
+    }
+
+    .user-card {
+      display: flex;
+      align-items: center;
+      background-color: #B35656;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 8px;
+    }
+
+    .user-card img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+
+    .user-name {
+      font-size: 14px;
+      color: #FFF;
+    }
