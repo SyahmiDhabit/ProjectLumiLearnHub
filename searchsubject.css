@@ -24,7 +24,6 @@ body {
   z-index: 1000;
 }
 
-
 .back-btn {
   background-color: #712d2d;
   color: white;
@@ -135,4 +134,17 @@ body {
   cursor: pointer;
   width: 160px;
   box-shadow: 2px 2px 5px #00000060;
+}
+
+footer {
+  background-color: #a55252;
+  color: black;
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+  border-radius: 20px 20px 0 0 ;
+  margin-top: 30px;
+  width: 100vw;            
+  position: fixed;         
+  bottom: 0;
 }
