@@ -130,16 +130,19 @@ nav li:last-child a {
 }
 
 .imagetop {
-  width: 300px;
+  width: 350px;
+  margin-bottom: 40px;
   height: auto;
-  border-radius: 8px; /* optional */
-  margin-left: 400px;
+  border-radius: 50px; /* optional */
+  margin-left: 450px;
 }
 
 .imageBottom {
   width: 300px;
   height: auto;
-  border-radius: 8px; /* optional */
+  border-radius: 50px; /* optional */
+  margin-right: 30px;
+  
 }
 
 footer {
