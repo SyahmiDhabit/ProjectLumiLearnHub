@@ -3,23 +3,40 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>LumiLearnHub Student Dashboard</title>
+  <title>LumiLearnHub - FeebackStudent</title>
   <link rel="stylesheet" href="feedbackstudent.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
-  <div class="top-bar">
-    <button class="back-btn">← BACK TO HOME</button>
+  <div class="header-bar">
+    <button class="back-button">BACK TO HOME</button>
+    <img class="user-top-icon" src="image/LoginUser.png" alt="User Icon">
   </div>
 
-  <div class="welcome-header">
+  
     <h1 class="welcome-heading">WELCOME STUDENT!</h1>
 
-    <p>We’re excited to have you here. This is your space to explore, learn, and grow at your own pace. You can find the right tutors, book sessions that suit your schedule, and keep track of your learning progress all in one convenient place. Whether you're brushing up on a subject or aiming for top scores, LumiLearnHub is here to support every step of your journey. Let’s make the most of your time here and reach your goals together!</p>
-  </div>
+    <p class="intro">We’re excited to have you here. This is your space to explore, learn, and grow at your own pace. You can find the right tutors, book sessions that suit your schedule, and keep track of your learning progress all in one convenient place. Whether you're brushing up on a subject or aiming for top scores, LumiLearnHub is here to support every step of your journey. Let’s make the most of your time here and reach your goals together!</p>
+  
+
+    <div class="button-group">
+      <button>
+        <img src="image/subject.png" alt="Subject" style="width: 20px; vertical-align: middle; margin-right: 8px;" />
+        Explore Subject
+      </button>
+      <button>
+        <img src="image/AddTutor.png" alt="Add Tutor" style="width: 20px; vertical-align: middle; margin-right: 8px;" />
+        Find a Tutor
+      </button>
+      <button>
+        <img src="image/toptutor.png" alt="Top Tutor" style="width: 20px; vertical-align: middle; margin-right: 8px;" />
+        Top Tutors
+      </button>
+    </div>
 
   <div class="main-content">
-  <!-- Table Section -->
+
+
   <div class="table-section">
     <table class="subject-table">
       <tr>
@@ -62,12 +79,23 @@
   </div>
 
 
-  <div class="button-section">
-    <button class="action-btn">📅 My Schedule</button>
-    <button class="action-btn">📘 My Subject</button>
-    <button class="action-btn">⭐ Feedback</button>
-  </div>
+  <div class="side-buttons">
+      <div class="side-button">
+        <img src="image/calendaricon.png" alt="My Schedule">
+        <span>My Schedule</span>
+      </div>
+      <div class="side-button">
+        <img src="image/subject.png" alt="My Subject">
+        <span>My Subject</span>
+      </div>
+      <div class="side-button">
+        <img src="image/feedbackicon.png" alt="Feedback">
+        <span>Feedback</span>
+      </div>
+    </div>
 </div>
+
+
 
 <footer>
     2025 LumiLearnHub. All rights reserved

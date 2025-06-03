@@ -98,6 +98,10 @@ h1 {
   width: 100%;
 }
 
+.schedule th{
+  background-color: #f08080;
+}
+
 .schedule th,
 .schedule td {
   border: 1px solid black;
@@ -111,15 +115,21 @@ h1 {
   gap: 15px;
 }
 
-.side-buttons button {
-  background-color: #f88b8b;
+.side-button {
+  background-color: #ff8080;
   color: black;
   font-weight: bold;
-  border:2px solid #000;
-  padding: 15px;
-  border-radius: 10px;
-  font-size: 1rem;
+  padding: 15px 20px ;
+  border-radius: 12px;
+  border: 2px solid #000;
   cursor: pointer;
+  margin-right:15px;
+}
+
+.side-button img {
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
 }
 
 .side-buttons .highlight {
