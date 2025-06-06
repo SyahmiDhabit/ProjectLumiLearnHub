@@ -1,11 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tutor Dashboard - Availability</title>
+  <link rel="stylesheet" href="availabletutor.css" />
 </head>
 <body>
-    
+  <div class="header">
+    <div class="brand">LumiLearnHub</div>
+    <div class="welcome">WELCOME TUTOR!</div>
+    <div class="profile-icon"></div>
+  </div>
+
+  <div class="container">
+    <div class="sidebar">
+      <div class="menu-title">MENU OPTION</div>
+      <div class="menu-item">
+        <span>My Schedule</span>
+        <img src="image/calendaricon.png" alt="calendar icon" class="menu-icon">
+      </div>
+      <div class="menu-item">
+        <span>My Student</span>
+        <img src="image/usericon.png" alt="user icon" class="menu-icon">
+      </div>
+      <div class="menu-item">
+        <span>Reminder</span>
+        <img src="image/clockicon.png" alt="clock icon" class="menu-icon">
+      </div>
+      <div class="menu-item">
+        <span>Student Request</span>
+        <img src="image/requesticon.png" alt="request icon" class="menu-icon">
+      </div>
+      <div class="menu-item">
+        <span>Feedback</span>
+        <img src="image/feedbackicon.png" alt="feedback icon" class="menu-icon">
+      </div>
+    </div>
+
+    <div class="main-content">
+      <div class="top-buttons">
+        <button class="top-btn selected">Availability</button>
+        <button class="top-btn">Application for Subject Tutoring</button>
+      </div>
+
+      <div class="availability-section">
+        <h2>Availability</h2>
+        <p>Students will know your availability before applying to your tutoring subject.</p>
+        <table class="availability-table">
+          <thead>
+            <tr>
+              <th>Day</th>
+              <th>8.30am - 10.30am</th>
+              <th>12.30pm - 2.30pm</th>
+              <th>4.30pm - 6.30pm</th>
+              <th>9.30pm - 10.30pm</th>
+              <th>11.30pm - 12.30am</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Sunday</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Monday</td>
+              <td><img src="image/xicon.png" class="x-icon" alt="x"></td>
+              <td></td>
+              <td><img src="image/xicon.png" class="x-icon" alt="x"></td>
+              <td><img src="image/xicon.png" class="x-icon" alt="x"></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Tuesday</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td><img src="image/xicon.png" class="x-icon" alt="x"></td>
+            </tr>
+            <tr>
+              <td>Wednesday</td>
+              <td></td>
+              <td><img src="image/xicon.png" class="x-icon" alt="x"></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Thursday</td>
+              <td></td>
+              <td><img src="image/xicon.png" class="x-icon" alt="x"></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="right-toolbar">
+            <button class="toolbar-btn">
+                 <img src="image/remove.png" alt="remove">
+            </button>
+            <button class="toolbar-btn">
+                 <img src="image/addingicon.png" alt="Add">
+            </button>
+    </div>
+  </div>
 </body>
 </html>
