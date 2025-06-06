@@ -11,13 +11,12 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 15px;
-  background-color: #c3454d;
-  border-bottom: 3px solid #4d2e30;
+  background-color: #640a0a;
   border-radius: 0 0 20px 20px;
 }
 
 .back-btn {
-  background-color: #a34e4e;
+  background-color: #e37979;
   border: none;
   padding: 10px 20px;
   color: white;
@@ -28,6 +27,9 @@ body {
 }
 
 .login-user-icon {
+  position: absolute;
+  top: 10px;
+  right: 15px;
   width: 45px;
   height: 45px;
   border-radius: 50%;
@@ -84,24 +86,15 @@ body {
   justify-content: center;
   align-items: center;
   margin: 10px auto;
+  margin-left: 10px;
 }
 
 .search-input {
   padding: 10px;
   width: 300px;
-  border-radius: 10px 0 0 10px;
+  border-radius: 10px;
   border: none;
   font-size: 16px;
-}
-
-.location-btn {
-  background-color: #6c1d1d;
-  color: white;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 0 10px 10px 0;
-  font-weight: bold;
-  cursor: pointer;
 }
 
 .tutor-list {

@@ -5,31 +5,34 @@ body {
   color: white;
 }
 
-header {
-  background-color: #8b3d3d;
+.header-bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  padding: 15px;
+  background-color: #640a0a;
+  border-radius: 0 0 20px 20px;
 }
 
-.back-btn {
-  background-color: #5c1e1e;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 10px;
-  border: none;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.profile-icon {
-  background-color: #fff;
-  width: 40px;
-  height: 40px;
+.user-top-icon {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
-  background-image: radial-gradient(circle at 50% 35%, #7b3b3b 25%, #fff 25%);
-  background-size: 100% 100%;
+  border: 2px solid #fff;
+}
+
+.back-button {
+  background-color: #e37979;
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 12px;
+  cursor: pointer;
 }
 
 main {

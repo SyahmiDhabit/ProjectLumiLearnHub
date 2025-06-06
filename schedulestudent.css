@@ -10,11 +10,9 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 15px;
   background-color: #640a0a;
-  border: 2px solid #712424;
-  padding: 10px 20px;
-  border-radius: 10px;
-  margin-bottom: 20px;
+  border-radius: 0 0 20px 20px;
 }
 
 .user-top-icon {
@@ -23,18 +21,19 @@ body {
   right: 15px;
   width: 45px;
   height: 45px;
+  border: 2px solid #fff;
   border-radius: 50%;
 }
 
 .back-button {
-  background-color: #631f1f;
-  color: white;
-  padding: 10px 20px;
+  background-color: #e37979;
   border: none;
-  border-radius: 12px;
+  padding: 10px 20px;
+  color: white;
   font-weight: bold;
+  font-size: 16px;
+  border-radius: 12px;
   cursor: pointer;
-  margin-bottom: 15px;
 }
 
 h1 {
