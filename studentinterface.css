@@ -12,7 +12,6 @@ body {
   align-items: center;
   padding: 15px;
   background-color: #640a0a;
-  border-radius: 0 0 20px 20px;
 }
 
 .user-top-icon {
@@ -36,19 +35,25 @@ body {
   cursor: pointer;
 }
 
-.title {
+.welcome-section {
+  background-color: #640a0a; /* Matching top bar */
+  color: white;
+  padding: 30px 20px;
   text-align: center;
-  font-size: 2rem;
-  text-shadow: 1px 1px black;
-  margin: 20px 0;
+  border-radius: 0 0 20px 20px; /* Creates full-width effect */
+  margin-bottom: 20px;
 }
 
-.intro {
-  max-width: 800px;
-  margin: auto;
+.welcome-title {
   text-align: center;
-  line-height: 1.6;
+margin: 0;
+}
+
+.description {
+  max-width: 800px;
+  margin: 10px auto;
   font-size: 1rem;
+  line-height: 1.6;
 }
 
 .top-buttons {

@@ -17,7 +17,6 @@ body {
   align-items: center;
   padding: 15px;
   background-color: #640a0a;
-  border-radius: 0 0 20px 20px;
 }
 
 .user-top-icon {
@@ -41,18 +40,23 @@ body {
   cursor: pointer;
 }
 
+.welcome-section {
+  background-color: #640a0a; /* Matching top bar */
+  color: white;
+  padding: 30px 20px;
+  text-align: center;
+  border-radius: 0 0 20px 20px; /* Creates full-width effect */
+  margin-bottom: 20px;
+}
+
 .welcome-title {
   text-align: center;
-  font-size: 2.2rem;
-  font-weight: bold;
-  text-shadow: 1px 1px #000;
-  margin-top: 20px;
+margin: 0;
 }
 
 .description {
-  max-width: 850px;
-  margin: 20px auto;
-  text-align: center;
+  max-width: 800px;
+  margin: 10px auto;
   font-size: 1rem;
   line-height: 1.6;
 }
@@ -121,12 +125,11 @@ body {
 
 .right-buttons {
   position: fixed;
+  bottom: 60px;
   right: 30px;
-  top: 50%;
-  transform: translateY(-50%);
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 10px;
 }
 
 .right-btn {

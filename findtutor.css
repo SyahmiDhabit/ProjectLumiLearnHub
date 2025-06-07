@@ -12,7 +12,6 @@ body {
   align-items: center;
   padding: 15px;
   background-color: #640a0a;
-  border-radius: 0 0 20px 20px;
 }
 
 .back-btn {
@@ -36,22 +35,25 @@ body {
   border: 2px solid #fff;
 }
 
-.welcome-title {
+.welcome-section {
+  background-color: #640a0a; /* Matching top bar */
+  color: white;
+  padding: 30px 20px;
   text-align: center;
-  font-size: 30px;
-  font-weight: bold;
-  margin: 20px 0 10px;
-  text-shadow: 1px 1px #000;
+  border-radius: 0 0 20px 20px; /* Creates full-width effect */
+  margin-bottom: 20px;
 }
 
-.description {
-  text-align: center;
-  width: 80%;
-  margin: auto;
-  font-size: 16px;
+.welcome-title{
+text-align: center;
+margin: 0;
+}
+
+.description{
+  max-width: 800px;
+  margin: 10px auto;
+  font-size: 1rem;
   line-height: 1.6;
-  color: #fff;
-  font-weight: 500;
 }
 
 .main-buttons {

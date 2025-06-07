@@ -11,7 +11,6 @@ body {
   align-items: center;
   padding: 15px;
   background-color: #640a0a;
-  border-radius: 0 0 20px 20px;
 }
 
 .user-top-icon {
@@ -24,7 +23,6 @@ body {
   border-radius: 50%;
 }
 
-
 .back-button {
   background-color: #e37979;
   border: none;
@@ -36,19 +34,32 @@ body {
   cursor: pointer;
 }
 
+.welcome-section {
+  background-color: #640a0a; /* Matching top bar */
+  color: white;
+  padding: 30px 20px;
+  text-align: center;
+  border-radius: 0 0 20px 20px; /* Creates full-width effect */
+  margin-bottom: 20px;
+}
+
+.welcome-title {
+  text-align: center;
+margin: 0;
+}
+
+.description {
+  max-width: 800px;
+  margin: 10px auto;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
 h1 {
   font-size: 32px;
   text-align: center;
   margin-bottom: 10px;
   text-shadow: 2px 2px #000;
-}
-
-.intro {
-  text-align: center;
-  max-width: 800px;
-  margin: auto;
-  margin-bottom: 30px;
-  font-size: 16px;
 }
 
 .action-buttons {

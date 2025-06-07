@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #865959;
+  background-color: #b77572;
   color: white;
 }
 
@@ -11,7 +11,6 @@ body {
   align-items: center;
   padding: 15px;
   background-color: #640a0a;
-  border-radius: 0 0 20px 20px;
 }
 
 .user-top-icon {
@@ -35,20 +34,25 @@ body {
   cursor: pointer;
 }
 
-.title {
+.welcome-section {
+  background-color: #640a0a; /* Matching top bar */
+  color: white;
+  padding: 30px 20px;
   text-align: center;
-  font-size: 32px;
-  font-weight: bold;
-  margin-top: 10px;
-  text-shadow: 1px 1px black;
+  border-radius: 0 0 20px 20px; /* Creates full-width effect */
+  margin-bottom: 20px;
+}
+
+.welcome-title {
+  text-align: center;
+margin: 0;
 }
 
 .description {
-  text-align: center;
   max-width: 800px;
-  margin: auto;
-  margin-bottom: 30px;
-  font-size: 16px;
+  margin: 10px auto;
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 .button-group {
@@ -60,7 +64,7 @@ body {
 }
 
 .button-group button {
-  background-color: #e3dcdc;
+  background-color: #f8f6f6;
   border: none;
   color: #000;
   padding: 15px 25px;
