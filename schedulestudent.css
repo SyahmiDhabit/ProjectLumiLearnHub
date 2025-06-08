@@ -63,7 +63,6 @@ h1 {
   text-shadow: 1px 1px #000;
 }
 
-
 .button-group {
   display: flex;
   justify-content: space-evenly;
@@ -79,6 +78,11 @@ h1 {
   font-weight: bold;
   cursor: pointer;
 }
+
+.button-group button:hover {
+  background-color: #e6a7a7;
+}
+
 
 .main-grid {
   display: flex;
@@ -126,6 +130,11 @@ h1 {
   flex-direction: column;
   gap: 15px;
 }
+
+#my-schedule-btn {
+  border: 4px solid rgb(113, 19, 19); /* Highlights the active page */
+}
+
 
 .side-button {
   background-color: #ff8080;

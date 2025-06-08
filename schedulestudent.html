@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>LumiLearnHub - Shcedule Student</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <link rel="stylesheet" href="schedulestudent.css" />
 </head>
 <body>
@@ -42,8 +43,10 @@
     <div class="main-grid">
       <div class="sidebar">
         <button class="icon-btn">⚙️</button>
-        <button class="icon-btn">✏️</button>
-        <button class="icon-btn">➕</button>
+        <div class="sidebar">
+          <button class="icon-btn edit">✏️ Edit Schedule</button>
+          <button class="icon-btn add">➕ Add Subject</button>
+        </div>
       </div>
 
       <table class="schedule">
@@ -69,14 +72,16 @@
       
   
     <div class="side-buttons">
-      <div class="side-button">
+      <div id="my-schedule-btn" class="side-button">
         <img src="image/calendaricon.png" alt="My Schedule">
         <span>My Schedule</span>
       </div>
+
       <div class="side-button">
         <img src="image/subject.png" alt="My Subject">
         <span>My Subject</span>
       </div>
+
       <div class="side-button">
         <img src="image/feedbackicon.png" alt="Feedback">
         <span>Feedback</span>
@@ -86,6 +91,140 @@
   <footer>
     2025 LumiLearnHub. All rights reserved
 </footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Back to home button
+    document.querySelector(".back-button").addEventListener("click", function () {
+        window.location.href = "studentinterface.html";
+    });
+
+    // User profile icon
+    document.querySelector(".user-top-icon").addEventListener("click", function () {
+        window.location.href = "profile2.html";
+    });
+
+    // Explore Subject Button
+    document.querySelector(".button-group button:nth-child(1)").addEventListener("click", function () {
+        window.location.href = "searchsubject.html";
+    });
+
+    // Find a Tutor Button
+    document.querySelector(".button-group button:nth-child(2)").addEventListener("click", function () {
+        window.location.href = "findtutor.html";
+    });
+
+    // Top Tutors Button
+    document.querySelector(".button-group button:nth-child(3)").addEventListener("click", function () {
+        window.location.href = "toptutors.html";
+    });
+
+    // My Subject Button
+    document.querySelector(".side-button:nth-child(2)").addEventListener("click", function () {
+        window.location.href = "subjectstudent.html";
+    });
+
+    // Feedback Button
+    document.querySelector(".side-button:nth-child(3)").addEventListener("click", function () {
+        window.location.href = "feedbackstudent.html";
+    });
+
+    function validateInput(subject, day, timeSlot) {
+        const validDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"];
+        const validTimeSlots = [
+            "8.30am - 10.30am",
+            "12.30pm - 2.30pm",
+            "4.30pm - 6.30pm",
+            "9.30pm - 10.30pm",
+            "11.30pm - 12.30am"
+        ];
+
+        if (!subject || subject.trim() === "") {
+            alert("Subject name cannot be empty.");
+            return false;
+        }
+        
+        if (!validDays.includes(day)) {
+            alert("Invalid day entered. Please enter one of the following: " + validDays.join(", "));
+            return false;
+        }
+        
+        if (!validTimeSlots.includes(timeSlot)) {
+            alert("Invalid time slot entered. Please enter one of the following: " + validTimeSlots.join("\n"));
+            return false;
+        }
+        
+        return true;
+    }
+
+    // ✅ Add Subject to Schedule with Validation
+    document.querySelector(".icon-btn.add").addEventListener("click", function () {
+        let subject = prompt("Enter new subject name:");
+        let day = prompt("Enter the day (e.g., 'Monday'):");
+        let timeSlot = prompt("Enter the time slot (e.g., '8.30am - 10.30am'):");
+
+        if (!validateInput(subject, day, timeSlot)) return;
+
+        let table = document.querySelector(".schedule tbody");
+        let rowFound = false;
+        let timeIndex = -1;
+
+        // Get the correct column index for the time slot
+        document.querySelectorAll(".schedule thead th").forEach((th, index) => {
+            if (th.textContent.trim() === timeSlot) {
+                timeIndex = index; // Save correct column index
+            }
+        });
+
+        table.querySelectorAll("tr").forEach(row => {
+            if (row.cells[0].textContent.trim() === day) { // Match the correct row by day
+                rowFound = true;
+                row.cells[timeIndex].textContent = subject; // Insert subject into correct time slot
+            }
+        });
+
+        if (!rowFound) alert("Invalid day entered. Try again.");
+    });
+
+    // ✅ Edit Existing Schedule Entry with Validation
+    document.querySelector(".icon-btn.edit").addEventListener("click", function () {
+        let currentSubject = prompt("Enter the current subject to edit:");
+        let newDay = prompt("Enter the new day (e.g., 'Tuesday'):");
+        let newTimeSlot = prompt("Enter the new time slot (e.g., '12.30pm - 2.30pm'):");
+
+        if (!validateInput(currentSubject, newDay, newTimeSlot)) return;
+
+        let table = document.querySelector(".schedule tbody");
+        let subjectFound = false;
+        let newTimeIndex = -1;
+
+        // Get the correct column index for the new time slot
+        document.querySelectorAll(".schedule thead th").forEach((th, index) => {
+            if (th.textContent.trim() === newTimeSlot) {
+                newTimeIndex = index;
+            }
+        });
+
+        table.querySelectorAll("tr").forEach(row => {
+            row.querySelectorAll("td").forEach((cell, index) => {
+                if (index > 0 && cell.textContent.trim() === currentSubject) {
+                    subjectFound = true;
+                    cell.textContent = ""; // Clear old subject
+
+                    if (row.cells[0].textContent.trim() === newDay) {
+                        row.cells[newTimeIndex].textContent = currentSubject; // Move subject to new slot
+                    }
+                }
+            });
+        });
+
+        if (!subjectFound) alert("Subject not found in the schedule. Try again.");
+    });
+  });
+
+
+
+</script>
 
 </body>
 </html>
