@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>LumiLearnHub - FeebackStudent</title>
   <link rel="stylesheet" href="feedbackstudent.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
   <div class="header-bar">
@@ -100,6 +100,45 @@
 <footer>
     2025 LumiLearnHub. All rights reserved
 </footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Back to home button
+    document.querySelector(".back-button").addEventListener("click", function () {
+        window.location.href = "studentinterface.html";
+    });
+
+    // User profile icon
+    document.querySelector(".user-top-icon").addEventListener("click", function () {
+        window.location.href = "profile2.html";
+    });
+
+    // Explore Subject Button
+    document.querySelector(".button-group button:nth-child(1)").addEventListener("click", function () {
+        window.location.href = "searchsubject.html";
+    });
+
+    // Find a Tutor Button
+    document.querySelector(".button-group button:nth-child(2)").addEventListener("click", function () {
+        window.location.href = "findtutor.html";
+    });
+
+    // Top Tutors Button
+    document.querySelector(".button-group button:nth-child(3)").addEventListener("click", function () {
+        window.location.href = "toptutors.html";
+    });
+
+    // My Schedule Button
+    document.querySelector(".side-button:nth-child(1)").addEventListener("click", function () {
+        window.location.href = "schedulestudent.html";
+    });
+
+    // My Subject Button
+    document.querySelector(".side-button:nth-child(2)").addEventListener("click", function () {
+        window.location.href = "subjectstudent.html";
+    });
+  });
+  </script>
 
 </body>
 </html>

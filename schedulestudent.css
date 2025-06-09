@@ -77,12 +77,14 @@ h1 {
   border-radius: 10px;
   font-weight: bold;
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
 
 .button-group button:hover {
-  background-color: #e6a7a7;
+  background-color: #ff9999;
+  transform: scale(1.05); 
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
 }
-
 
 .main-grid {
   display: flex;
@@ -131,10 +133,15 @@ h1 {
   gap: 15px;
 }
 
-#my-schedule-btn {
-  border: 4px solid rgb(113, 19, 19); /* Highlights the active page */
+.side-button:nth-child(1) {
+  border: 4px solid rgb(143, 15, 15);
+  background-color: #e77272;
 }
 
+.side-button:nth-child(1):hover {
+  background-color: #ff5050;
+  transform: scale(1.05); /* Slight pop effect */
+}
 
 .side-button {
   background-color: #ff8080;

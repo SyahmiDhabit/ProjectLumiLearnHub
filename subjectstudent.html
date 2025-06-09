@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>LumiLearnHub - Subject Student</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <link rel="stylesheet" href="subjectstudent.css"/>
 </head>
 <body>
@@ -40,9 +41,12 @@
     </div>
 
     <div class="subject-section">
-  <h2> My Subject</h2>
+  <h2> My Subject
+    <button id="add-subject-btn">➕ Add</button>
+  </h2>
+
   <div style="max-height: 180px; overflow-y: auto; width: 80%;">
-    <table>
+    <table id="subject-table">
       <thead>
         <tr>
           <th>No</th>
@@ -80,5 +84,69 @@
     2025 LumiLearnHub. All rights reserved
 </footer>
 
+
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Back to home button
+    document.querySelector(".back-button").addEventListener("click", function () {
+        window.location.href = "studentinterface.html";
+    });
+
+    // User profile icon
+    document.querySelector(".user-top-icon").addEventListener("click", function () {
+        window.location.href = "profile2.html";
+    });
+
+    // Explore Subject Button
+    document.querySelector(".button-group button:nth-child(1)").addEventListener("click", function () {
+        window.location.href = "searchsubject.html";
+    });
+
+    // Find a Tutor Button
+    document.querySelector(".button-group button:nth-child(2)").addEventListener("click", function () {
+        window.location.href = "findtutor.html";
+    });
+
+    // Top Tutors Button
+    document.querySelector(".button-group button:nth-child(3)").addEventListener("click", function () {
+        window.location.href = "toptutors.html";
+    });
+
+    // My Schedule Button
+    document.querySelector(".right-button:nth-child(1)").addEventListener("click", function () {
+        window.location.href = "schedulestudent.html";
+    });
+
+    // Feedback Button
+    document.querySelector(".right-button:nth-child(3)").addEventListener("click", function () {
+        window.location.href = "feedbackstudent.html";
+    });
+
+    document.querySelector("#add-subject-btn").addEventListener("click", function () {
+        let subjectName = prompt("Enter subject name:");
+        let tutorName = prompt("Enter tutor name:");
+
+        // Validation checks
+        if (!subjectName || subjectName.trim() === "") {
+            alert("Subject name cannot be empty!");
+            return;
+        }
+        if (!tutorName || tutorName.trim() === "") {
+            alert("Tutor name cannot be empty!");
+            return;
+        }
+
+        // Get table and create new row
+        let tableBody = document.querySelector("#subject-table tbody");
+        let newRow = tableBody.insertRow();
+        
+        // Auto-number new subject
+        let newSubjectIndex = tableBody.rows.length;
+        newRow.insertCell(0).textContent = newSubjectIndex;
+        newRow.insertCell(1).textContent = subjectName;
+        newRow.insertCell(2).textContent = tutorName;
+    });
+  });
+    </script>
 </body>
 </html>
