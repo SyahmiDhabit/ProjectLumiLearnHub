@@ -76,12 +76,9 @@ margin: 0;
 .btn.active {
   background-color: #f5f4f4;
   color: rgb(5, 5, 5);
-  border: 3px solid #861d1d;
+  border: 4px solid #861d1d;
 }
 
-.icon {
-  margin-left: 5px;
-}
 
 .search-section {
   display: flex;

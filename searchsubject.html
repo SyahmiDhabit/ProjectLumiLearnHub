@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>LumiLearnHub - Search Subject</title>
   <link rel="stylesheet" href="searchsubject.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
 
@@ -12,8 +13,6 @@
     <button class="back-button">BACK TO HOME</button>
     <img class="user-top-icon" src="image/LoginUser.png" alt="User Icon">
   </div>
-    
-  
     
     <div class="welcome-section">
     <h1 class="welcome-title">WELCOME STUDENT!</h1>
@@ -24,12 +23,22 @@
       Let’s make the most of your time here and reach your goals together!
     </p>
     </div>
+
   <div class="container"></div>
-    <div class="button-bar">
-      <button class="nav-btn active">📚 Explore Subject</button>
-      <button class="nav-btn">👤 Find a Tutor</button>
-      <button class="nav-btn">🌐 Top Tutors</button>
-    </div>
+  <div class="main-buttons">
+  <button class="btn active">
+    <img src="image/subject.png" alt="Explore Subject" style="width: 20px; vertical-align: middle; margin-right: 5px;">
+    Explore Subject
+  </button>
+  <button class="btn" id="find-tutor-btn" >
+    <img src="image/Addtutor.png" alt="Find a Tutor" style="width: 20px; vertical-align: middle; margin-right: 5px;">
+    Find a Tutor
+  </button>
+  <button class="btn" id="top-tutors-btn">
+    <img src="image/toptutor.png" alt="Top Tutors" style="width: 20px; vertical-align: middle; margin-right: 5px;">
+    Top Tutors
+  </button>
+  </div>
 
     <div class="search-bar">
       <input type="text" placeholder="Search Subject">
@@ -68,15 +77,15 @@
 
   
     <div class="right-buttons">
-      <div class="right-btn">
+      <div class="right-btn" id="my-schedule-btn">
         <img src="image/calendaricon.png" alt="My Schedule">
         <span>My Schedule</span>
       </div>
-      <div class="right-btn">
+      <div class="right-btn" id="my-subject-btn">
         <img src="image/subject.png" alt="My Subject">
         <span>My Subject</span>
       </div>
-      <div class="right-btn">
+      <div class="right-btn" id="feedback-btn">
         <img src="image/feedbackicon.png" alt="Feedback">
         <span>Feedback</span>
       </div>
@@ -86,6 +95,38 @@
   <footer>
     2025 LumiLearnHub. All rights reserved
 </footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelector(".back-button").addEventListener("click", function () {
+        window.location.href = "studentinterface.html";
+    });
+
+    document.querySelector(".user-top-icon").addEventListener("click", function () {
+      window.location.href = "profile2.html";
+    });
+
+    document.getElementById("find-tutor-btn").addEventListener("click", function () {
+      window.location.href = "findtutor.html";
+    });
+
+    document.getElementById("top-tutors-btn").addEventListener("click", function () {
+      window.location.href = "toptutors.html";
+    });
+
+    document.getElementById("my-schedule-btn").addEventListener("click", function () {
+      window.location.href = "schedulestudent.html";
+    });
+
+    document.getElementById("my-subject-btn").addEventListener("click", function () {
+      window.location.href = "subjectstudent.html";
+    });
+
+    document.getElementById("feedback-btn").addEventListener("click", function () {
+      window.location.href = "feedbackstudent.html";
+    });
+  });
+</script>
 
 </body>
 </html>

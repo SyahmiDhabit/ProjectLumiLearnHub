@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LumiLearnHub - FindTutor</title>
   <link rel="stylesheet" href="findtutor.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
   <div class="header">
@@ -23,7 +24,7 @@
   </div>
 
   <div class="main-buttons">
-  <button class="btn">
+  <button class="btn" id="explore-subject-btn">
     <img src="image/subject.png" alt="Explore Subject" style="width: 20px; vertical-align: middle; margin-right: 5px;">
     Explore Subject
   </button>
@@ -31,7 +32,7 @@
     <img src="image/Addtutor.png" alt="Find a Tutor" style="width: 20px; vertical-align: middle; margin-right: 5px;">
     Find a Tutor
   </button>
-  <button class="btn">
+  <button class="btn" id="top-tutors-btn">
     <img src="image/toptutor.png" alt="Top Tutors" style="width: 20px; vertical-align: middle; margin-right: 5px;">
     Top Tutors
   </button>
@@ -54,15 +55,15 @@
   </div>
 
   <div class="right-buttons">
-  <button class="right-btn">
+  <button class="right-btn" id="my-schedule-btn">
     <img src="image/calendaricon.png" alt="Schedule" style="width: 20px; vertical-align: middle; margin-right: 8px;">
     My Schedule
   </button>
-  <button class="right-btn">
+  <button class="right-btn" id="my-subject-btn">
     <img src="image/subject.png" alt="Subject" style="width: 20px; vertical-align: middle; margin-right: 8px;">
     My Subject
   </button>
-  <button class="right-btn">
+  <button class="right-btn" id="feedback-btn">
     <img src="image/feedbackicon.png" alt="Feedback" style="width: 20px; vertical-align: middle; margin-right: 8px;">
     Feedback
   </button>
@@ -71,6 +72,38 @@
 <footer>
     2025 LumiLearnHub. All rights reserved
 </footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelector(".back-btn").addEventListener("click", function () {
+        window.location.href = "studentinterface.html";
+    });
+
+    document.querySelector(".login-user-icon").addEventListener("click", function () {
+      window.location.href = "profile2.html";
+    });
+
+    document.getElementById("explore-subject-btn").addEventListener("click", function () {
+      window.location.href = "searchsubject.html";
+    });
+
+    document.getElementById("top-tutors-btn").addEventListener("click", function () {
+      window.location.href = "toptutors.html";
+    });
+
+    document.getElementById("my-schedule-btn").addEventListener("click", function () {
+      window.location.href = "schedulestudent.html";
+    });
+
+    document.getElementById("my-subject-btn").addEventListener("click", function () {
+      window.location.href = "subjectstudent.html";
+    });
+
+    document.getElementById("feedback-btn").addEventListener("click", function () {
+      window.location.href = "feedbackstudent.html";
+    });
+  });
+</script>
 
 </body>
 </html>
