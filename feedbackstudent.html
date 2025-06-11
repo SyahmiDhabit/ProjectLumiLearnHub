@@ -137,7 +137,37 @@
     document.querySelector(".side-button:nth-child(2)").addEventListener("click", function () {
         window.location.href = "subjectstudent.html";
     });
+
+    document.querySelectorAll(".subject-table td:last-child").forEach(cell => {
+        if (cell.textContent.trim() === "Rated") {
+            cell.style.color = "green";
+            cell.style.textDecoration = "underline";
+        } else if (cell.textContent.trim() === "Unrated") {
+            cell.style.color = "blue";
+            cell.style.textDecoration = "underline";
+            cell.style.cursor = "pointer";
+
+            cell.addEventListener("click", function () {
+                let comment = prompt("Please enter your comment for the tutor:");
+                let score = prompt("Rate the tutor (1-10):");
+
+                if (comment && score >= 1 && score <= 10) {
+                    alert(`Thank you for your feedback!\nComment: ${comment}\nScore: ${score}`);
+                    cell.textContent = "Rated";
+                    cell.style.color = "green";
+                    cell.style.textDecoration = "underline";
+                    cell.style.cursor = "default"; // Disable further clicks
+                    cell.replaceWith(cell.cloneNode(true)); // Remove event listener
+                } else {
+                    alert("Invalid input. Please enter a valid comment and score between 1-10.");
+                }
+            });
+        }
+    });
+    
   });
+
+
   </script>
 
 </body>

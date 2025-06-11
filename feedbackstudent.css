@@ -159,6 +159,11 @@ margin: 0;
   background-color: #f4c3c3;
 }
 
+.subject-table td:last-child {
+  color: blue;
+  text-decoration: underline;
+}
+
 .side-buttons {
   display: flex;
   flex-direction: column;

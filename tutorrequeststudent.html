@@ -37,6 +37,15 @@
   </main>
 
   <script >
+    document.addEventListener("DOMContentLoaded", function () {
+    document.querySelector(".back-button").addEventListener("click", function () {
+        window.location.href = "studentinterface.html";
+    });
+
+    document.querySelector(".user-top-icon").addEventListener("click", function () {
+      window.location.href = "profile2.html";
+    });
+    
     const pendingList = document.getElementById("pendingList");
 const acceptedList = document.getElementById("acceptedList");
 const rejectedList = document.getElementById("rejectedList");
@@ -106,7 +115,7 @@ function rejectTutor(index) {
 }
 
 renderLists();
-
+    });
   </script>
 
   <footer>

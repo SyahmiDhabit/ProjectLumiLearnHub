@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Reminder Schedule</title>
   <link rel="stylesheet" href="reminderstudent.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
   <div class="header-bar">
@@ -56,6 +56,18 @@
   <footer>
     2025 LumiLearnHub. All rights reserved
 </footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelector(".back-button").addEventListener("click", function () {
+        window.location.href = "studentinterface.html";
+    });
+
+    document.querySelector(".user-top-icon").addEventListener("click", function () {
+      window.location.href = "profile2.html";
+    });
+  });
+</script>
 
 </body>
 </html>

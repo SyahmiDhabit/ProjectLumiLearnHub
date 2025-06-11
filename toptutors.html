@@ -24,11 +24,11 @@
   </div>
 
     <div class="action-buttons">
-      <div class="button">
+      <div class="button" id="explore-subject-btn">
         <img src="image/subject.png" alt="Explore Subject">
         <span>Explore Subject</span>
       </div>
-      <div class="button">
+      <div class="button" id="find-tutor-btn">
         <img src="image/Addtutor.png" alt="Find a Tutor">
         <span>Find a Tutor</span>
       </div>
@@ -61,15 +61,15 @@
     </div>
 
     <div class="right-buttons">
-      <div class="right-button">
+      <div class="right-button" id="my-schedule-btn">
         <img src="image/calendaricon.png" alt="My Schedule">
         <span>My Schedule</span>
       </div>
-      <div class="right-button">
+      <div class="right-button" id="my-subject-btn">
         <img src="image/subject.png" alt="My Subject">
         <span>My Subject</span>
       </div>
-      <div class="right-button">
+      <div class="right-button" id="feedback-btn">
         <img src="image/feedbackicon.png" alt="Feedback">
         <span>Feedback</span>
       </div>
@@ -79,6 +79,38 @@
   <footer>
     2025 LumiLearnHub. All rights reserved
 </footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelector(".back-button").addEventListener("click", function () {
+        window.location.href = "studentinterface.html";
+    });
+
+    document.querySelector(".user-top-icon").addEventListener("click", function () {
+      window.location.href = "profile2.html";
+    });
+
+    document.getElementById("explore-subject-btn").addEventListener("click", function () {
+      window.location.href = "searchsubject.html";
+    });
+
+    document.getElementById("find-tutor-btn").addEventListener("click", function () {
+      window.location.href = "findtutor.html";
+    });
+
+    document.getElementById("my-schedule-btn").addEventListener("click", function () {
+      window.location.href = "schedulestudent.html";
+    });
+
+    document.getElementById("my-subject-btn").addEventListener("click", function () {
+      window.location.href = "subjectstudent.html";
+    });
+
+    document.getElementById("feedback-btn").addEventListener("click", function () {
+      window.location.href = "feedbackstudent.html";
+    });
+  });
+</script>
 
 </body>
 </html>
