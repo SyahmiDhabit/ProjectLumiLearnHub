@@ -43,6 +43,17 @@
     <input type="text" placeholder="Search Tutor" class="search-input">
   </div>
 
+  <div id="tutor-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <h2 id="tutor-name"></h2>
+    <p><strong>Tutor ID:</strong> <span id="tutor-id"></span></p>
+    <p><strong>Subject Teaching:</strong> <span id="subject-teaching"></span></p>
+    <p><strong>Highest Education:</strong> <span id="highest-education"></span></p>
+    <p><strong>Achievements:</strong> <span id="achievements"></span></p>
+  </div>
+</div>
+
   <div class="tutor-list">
     <div class="tutor-item"><img src="image/LoginUser.png" alt="Tutor">Subiyamin bin Sulaiman</div>
     <div class="tutor-item"><img src="image/LoginUser.png" alt="Tutor">Muhammad Sumbul</div>
@@ -75,6 +86,59 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
+    const tutorDetails = {
+  "Subiyamin bin Sulaiman": { id: "T001", subject: "Mathematics", education: "PhD in Applied Mathematics", achievements: "Published 10 research papers" },
+  "Muhammad Sumbul": { id: "T002", subject: "Physics", education: "MSc in Physics", achievements: "Top-rated tutor for 3 years" },
+  "Saidatul Syuhada": { id: "T003", subject: "Biology", education: "BSc in Biological Sciences", achievements: "Developed interactive teaching modules" },
+  "Fakhrul Razi": { id: "T004", subject: "Chemistry", education: "MSc in Organic Chemistry", achievements: "Led research on sustainable materials" },
+  "Atiqah Lazim": { id: "T005", subject: "English", education: "BA in English Literature", achievements: "Published a language learning guide" },
+  "Zafry Rohaimi": { id: "T006", subject: "Computer Science", education: "BSc in Software Engineering", achievements: "Developed AI-powered learning tools" },
+  "Dayana Sofea": { id: "T007", subject: "History", education: "MA in World History", achievements: "Recognized for engaging historical storytelling" },
+  "Nurul Huda": { id: "T008", subject: "Economics", education: "PhD in Financial Economics", achievements: "Conducted economic policy research" }
+  };
+
+  document.querySelectorAll(".tutor-item").forEach(item => {
+  item.addEventListener("click", function () {
+    let tutorName = this.textContent.trim();
+    let modal = document.getElementById("tutor-modal");
+
+    if (tutorDetails[tutorName]) {
+      document.getElementById("tutor-name").textContent = tutorName;
+      document.getElementById("tutor-id").textContent = tutorDetails[tutorName].id;
+      document.getElementById("subject-teaching").textContent = tutorDetails[tutorName].subject;
+      document.getElementById("highest-education").textContent = tutorDetails[tutorName].education;
+      document.getElementById("achievements").textContent = tutorDetails[tutorName].achievements;
+      
+      modal.style.display = "block";
+     }
+    });
+  });
+
+  document.querySelector(".close-btn").addEventListener("click", function () {
+  document.getElementById("tutor-modal").style.display = "none";
+  });
+
+  window.addEventListener("click", function (e) {
+    let modal = document.getElementById("tutor-modal");
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+
+
+
+    document.querySelector(".search-input").addEventListener("input", function () {
+       let query = this.value.trim().toLowerCase(); // Remove extra spaces and convert to lowercase
+
+      document.querySelectorAll(".tutor-item").forEach(item => {
+        let tutorName = item.textContent.trim().toLowerCase();
+    
+        // Check if tutor name starts with the input letter
+        item.style.display = tutorName.startsWith(query) ? "block" : "none";
+      });
+    });
+
+
     document.querySelector(".back-btn").addEventListener("click", function () {
         window.location.href = "studentinterface.html";
     });

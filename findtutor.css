@@ -14,6 +14,28 @@ body {
   background-color: #640a0a;
 }
 
+.modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgb(229, 152, 152);
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  border-radius: 10px;
+}
+
+.modal-content {
+  text-align: center;
+}
+
+.close-btn {
+  float: right;
+  font-size: 24px;
+  cursor: pointer;
+}
+
 .back-btn {
   background-color: #e37979;
   border: none;
@@ -71,6 +93,13 @@ margin: 0;
   border-radius: 8px;
   font-weight: bold;
   cursor: pointer;
+  border: 2px solid #000;
+}
+
+.main-buttons button:hover {
+  background-color: #ff9999;
+  transform: scale(1.05); 
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
 }
 
 .btn.active {
@@ -144,6 +173,11 @@ margin: 0;
   border-radius: 12px;
   border: 2px solid #000;
   cursor: pointer;
+}
+
+.right-btn:hover {
+  background-color: #ff5050;
+  transform: scale(1.05); /* Slight pop effect */
 }
 
 footer {
