@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #a86968;
+  background-color: #b77572;
   color: #eeecec;
 }
 
@@ -34,6 +34,12 @@ body {
   cursor: pointer;
 }
 
+.back-button:hover{
+  background-color: #ff9999;
+  transform: scale(1.05); 
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
 .welcome-section {
   background-color: #640a0a; /* Matching top bar */
   color: white;
@@ -59,7 +65,6 @@ h1 {
   font-size: 32px;
   text-align: center;
   margin-bottom: 10px;
-  text-shadow: 2px 2px #000;
 }
 
 .action-buttons {
@@ -78,11 +83,15 @@ h1 {
   height: 40px;
   text-align: center;
   border: 2px solid #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .button img {
   width: 25px;
   height: 25px;
+  margin-right: 8px;
 }
 
 .button:hover {
@@ -188,6 +197,8 @@ h1 {
   border-radius: 12px;
   border: 2px solid #000;
   cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
 .right-button img {
