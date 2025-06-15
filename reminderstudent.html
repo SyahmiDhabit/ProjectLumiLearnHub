@@ -15,20 +15,20 @@
   </div>
 
   <div id="subjectModal" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <h2 id="modalTitle">Edit Subject</h2>
-    <label>Subject Name:</label>
-    <input type="text" id="subjectInput">
-    <label>Lecturer Name:</label>
-    <input type="text" id="lecturerInput">
-    <label>Time:</label>
-    <input type="text" id="timeInput">
-    <label>Date:</label>
-    <input type="text" id="dateInput">
-    <button id="saveBtn">Save</button>
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2 id="modalTitle">Edit Subject</h2>
+      <label>Subject Name:</label>
+      <input type="text" id="subjectInput">
+      <label>Lecturer Name:</label>
+      <input type="text" id="lecturerInput">
+      <label>Time:</label>
+      <input type="text" id="timeInput">
+      <label>Date:</label>
+      <input type="text" id="dateInput">
+      <button id="saveBtn">Save</button>
+    </div>
   </div>
-</div>
 
   <div class="container">
     <h2>Reminder</h2>
@@ -51,13 +51,13 @@
             </tr>
           </thead>
           <tbody id="reminderBody">
-            <tr><td>1</td><td>Computer Science</td><td>Zanariah Ali</td><td>2.30pm</td><td>17.05.25</td></tr>
-            <tr><td>2</td><td>Chemistry</td><td>Aliya Najwa</td><td>9.30pm</td><td>17.05.25</td></tr>
-            <tr><td>3</td><td>History</td><td>Zain Saidin</td><td>11.30am</td><td>17.05.25</td></tr>
-            <tr><td>4</td><td>Math</td><td>Naim Mazlan</td><td>11.30am</td><td>19.05.25</td></tr>
-            <tr><td>5</td><td>Biology</td><td>Norhayati Abu</td><td>3.00pm</td><td>19.05.25</td></tr>
-            <tr><td>6</td><td>Science</td><td>Aliya Najwa</td><td>4.30pm</td><td>19.05.25</td></tr>
-            <tr><td>7</td><td>Computer Science</td><td>Zanariah Ali</td><td>10.30am</td><td>20.05.25</td></tr>
+            <tr><td>1</td><td>Computer Science</td><td>Zanariah Ali</td><td>2.30pm</td><td>17.05.25</td><td></td></tr>
+            <tr><td>2</td><td>Chemistry</td><td>Aliya Najwa</td><td>9.30pm</td><td>17.05.25</td><td></td></tr>
+            <tr><td>3</td><td>History</td><td>Zain Saidin</td><td>11.30am</td><td>17.05.25</td><td></td></tr>
+            <tr><td>4</td><td>Math</td><td>Naim Mazlan</td><td>11.30am</td><td>19.05.25</td><td></td></tr>
+            <tr><td>5</td><td>Biology</td><td>Norhayati Abu</td><td>3.00pm</td><td>19.05.25</td><td></td></tr>
+            <tr><td>6</td><td>Science</td><td>Aliya Najwa</td><td>4.30pm</td><td>19.05.25</td><td></td></tr>
+            <tr><td>7</td><td>Computer Science</td><td>Zanariah Ali</td><td>10.30am</td><td>20.05.25</td><td></td></tr>
           </tbody>
         </table>
       </div>
@@ -72,133 +72,129 @@
 
   <footer>
     2025 LumiLearnHub. All rights reserved
-</footer>
+  </footer>
 
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const modal = document.getElementById("subjectModal");
-    const closeBtn = document.querySelector(".close");
-    const saveBtn = document.getElementById("saveBtn");
-    let currentRow = null;
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const modal = document.getElementById("subjectModal");
+      const closeBtn = document.querySelector(".close");
+      const saveBtn = document.getElementById("saveBtn");
+      const reminderBody = document.getElementById("reminderBody");
+      let currentRow = null;
 
-  
+      // Add edit icons to existing rows
+      reminderBody.querySelectorAll("tr").forEach((row) => {
+        addEditIcon(row);
+      });
 
-  document.querySelector(".fa-plus").addEventListener("click", function () {
-    openModal("Add Subject");
-    currentRow = null; // Ensure it creates a new entry
-  });
+      document.querySelector(".fa-plus").addEventListener("click", function () {
+        openModal("Add Subject");
+        clearInputs();
+        currentRow = null;
+      });
 
-  function openModal(title) {
-    document.getElementById("modalTitle").innerText = title;
-    modal.style.display = "block";
-  }
+      closeBtn.addEventListener("click", function () {
+        modal.style.display = "none";
+      });
 
-  closeBtn.addEventListener("click", function () {
-    modal.style.display = "none";
-  });
+      saveBtn.addEventListener("click", function () {
+        if (currentRow) {
+          updateRow(currentRow);
+        } else {
+          addNewSubject();
+        }
+        modal.style.display = "none";
+      });
 
-  saveBtn.addEventListener("click", function () {
-    if (currentRow) {
-      updateRow(currentRow);
-    } else {
-      addNewSubject();
-    }
-    modal.style.display = "none";
-  });
+      function openModal(title) {
+        document.getElementById("modalTitle").innerText = title;
+        modal.style.display = "block";
+      }
 
-  function updateRow(row) {
-    const inputs = document.querySelectorAll(".modal-content input");
-    row.cells[1].innerText = inputs[0].value;
-    row.cells[2].innerText = inputs[1].value;
-    row.cells[3].innerText = inputs[2].value;
-    row.cells[4].innerText = inputs[3].value;
-  }
+      function clearInputs() {
+        document.getElementById("subjectInput").value = "";
+        document.getElementById("lecturerInput").value = "";
+        document.getElementById("timeInput").value = "";
+        document.getElementById("dateInput").value = "";
+      }
 
-  function addNewSubject() {
-    const reminderBody = document.getElementById("reminderBody");
-    const inputs = document.querySelectorAll(".modal-content input");
+      function updateRow(row) {
+        row.cells[1].innerText = document.getElementById("subjectInput").value;
+        row.cells[2].innerText = document.getElementById("lecturerInput").value;
+        row.cells[3].innerText = document.getElementById("timeInput").value;
+        row.cells[4].innerText = document.getElementById("dateInput").value;
+      }
 
-    let newRow = reminderBody.insertRow();
-    newRow.innerHTML = `
-      <td>${reminderBody.rows.length}</td>
-      <td>${inputs[0].value}</td>
-      <td>${inputs[1].value}</td>
-      <td>${inputs[2].value}</td>
-      <td>${inputs[3].value}</td>
-    `;
-  }
+      function addNewSubject() {
+        const newRow = reminderBody.insertRow();
+        const newIndex = reminderBody.rows.length;
 
-  const reminderBody = document.getElementById("reminderBody");
+        newRow.insertCell(0).innerText = newIndex;
+        newRow.insertCell(1).innerText = document.getElementById("subjectInput").value;
+        newRow.insertCell(2).innerText = document.getElementById("lecturerInput").value;
+        newRow.insertCell(3).innerText = document.getElementById("timeInput").value;
+        newRow.insertCell(4).innerText = document.getElementById("dateInput").value;
+        newRow.insertCell(5); // placeholder for Edit
 
-  // Add edit icons dynamically to each row
-  reminderBody.querySelectorAll("tr").forEach(row => {
-    let editIcon = document.createElement("i");
-    editIcon.classList.add("fas", "fa-edit");
-    editIcon.style.cursor = "pointer";
-    editIcon.addEventListener("click", function () {
-      enableEditing(row);
-    });
+        addEditIcon(newRow);
+      }
 
-    // Append edit icon to the last cell of each row
-    let lastCell = row.insertCell(-1);
-    lastCell.appendChild(editIcon);
+      function addEditIcon(row) {
+        const editCell = row.cells[5];
+        const editIcon = document.createElement("i");
+        editIcon.classList.add("fas", "fa-edit");
+        editIcon.style.cursor = "pointer";
+        editIcon.addEventListener("click", function () {
+          enableEditing(row);
+        });
+        editCell.appendChild(editIcon);
+      }
 
-    function enableEditing(row) {
-  row.querySelectorAll("td").forEach((cell, index) => {
-    if (index > 0 && index < 5) { // Skip first column (#), allow Subject, Lecturer, Time, and Date
-      let currentText = cell.innerText;
-      let input = document.createElement("input");
-      input.type = "text";
-      input.value = currentText;
-      cell.innerHTML = "";
-      cell.appendChild(input);
-    }
-  });
+      function enableEditing(row) {
+        for (let i = 1; i <= 4; i++) {
+          const cell = row.cells[i];
+          const input = document.createElement("input");
+          input.type = "text";
+          input.value = cell.innerText;
+          cell.innerHTML = "";
+          cell.appendChild(input);
+        }
 
-  // Ensure save button only gets added once
-  if (!row.querySelector(".save-btn")) {
-    let saveBtn = document.createElement("button");
-    saveBtn.innerText = "Save";
-    saveBtn.classList.add("save-btn");
+        if (!row.querySelector(".save-btn")) {
+          const saveBtn = document.createElement("button");
+          saveBtn.innerText = "Save";
+          saveBtn.classList.add("save-btn");
 
-    saveBtn.addEventListener("click", function () {
-      saveChanges(row);
-    });
+          saveBtn.addEventListener("click", function () {
+            saveChanges(row);
+          });
 
-    let lastCell = row.cells[row.cells.length - 1]; // Use existing last cell instead of adding a new one
-    lastCell.appendChild(saveBtn);
-  }
-}
+          row.cells[5].appendChild(saveBtn);
+        }
+      }
 
-function saveChanges(row) {
-  row.querySelectorAll("td input").forEach(input => {
-    let cell = input.parentElement;
-    cell.innerText = input.value; // Replace input field with text
-  });
+      function saveChanges(row) {
+        for (let i = 1; i <= 4; i++) {
+          const input = row.cells[i].querySelector("input");
+          if (input) {
+            row.cells[i].innerText = input.value;
+          }
+        }
 
-  // Remove the save button after saving
-  let saveBtn = row.querySelector(".save-btn");
-  if (saveBtn) {
-    saveBtn.remove();
-  }
-}
-  });
-});
+        const saveBtn = row.querySelector(".save-btn");
+        if (saveBtn) {
+          saveBtn.remove();
+        }
+      }
 
-
-
-
-    document.querySelector(".back-button").addEventListener("click", function () {
+      document.querySelector(".back-button").addEventListener("click", function () {
         window.location.href = "studentinterface.html";
+      });
+
+      document.querySelector(".user-top-icon").addEventListener("click", function () {
+        window.location.href = "profile2.html";
+      });
     });
-
-    document.querySelector(".user-top-icon").addEventListener("click", function () {
-      window.location.href = "profile2.html";
-    });
-
-  
-
-</script>
-
+  </script>
 </body>
 </html>
