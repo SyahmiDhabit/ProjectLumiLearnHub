@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Reminder Schedule</title>
   <link rel="stylesheet" href="reminderstudent.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
@@ -13,14 +14,29 @@
     <img class="user-top-icon" src="image/LoginUser.png" alt="User Icon">
   </div>
 
+  <div id="subjectModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2 id="modalTitle">Edit Subject</h2>
+    <label>Subject Name:</label>
+    <input type="text" id="subjectInput">
+    <label>Lecturer Name:</label>
+    <input type="text" id="lecturerInput">
+    <label>Time:</label>
+    <input type="text" id="timeInput">
+    <label>Date:</label>
+    <input type="text" id="dateInput">
+    <button id="saveBtn">Save</button>
+  </div>
+</div>
+
   <div class="container">
     <h2>Reminder</h2>
     <div class="reminder-box">
       <div class="reminder-table">
         <div class="icons">
           <i class="fas fa-cog"></i>
-          <i class="fas fa-edit"></i>
-          <i class="fas fa-add"></i>
+          <i class="fas fa-plus"></i>
           <i class="fas fa-clock"></i>
         </div>
         <table>
@@ -31,6 +47,7 @@
               <th>Lecturer</th>
               <th>Time</th>
               <th>Date</th>
+              <th>Edit</th>
             </tr>
           </thead>
           <tbody id="reminderBody">
@@ -59,6 +76,118 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
+    const modal = document.getElementById("subjectModal");
+    const closeBtn = document.querySelector(".close");
+    const saveBtn = document.getElementById("saveBtn");
+    let currentRow = null;
+
+  
+
+  document.querySelector(".fa-plus").addEventListener("click", function () {
+    openModal("Add Subject");
+    currentRow = null; // Ensure it creates a new entry
+  });
+
+  function openModal(title) {
+    document.getElementById("modalTitle").innerText = title;
+    modal.style.display = "block";
+  }
+
+  closeBtn.addEventListener("click", function () {
+    modal.style.display = "none";
+  });
+
+  saveBtn.addEventListener("click", function () {
+    if (currentRow) {
+      updateRow(currentRow);
+    } else {
+      addNewSubject();
+    }
+    modal.style.display = "none";
+  });
+
+  function updateRow(row) {
+    const inputs = document.querySelectorAll(".modal-content input");
+    row.cells[1].innerText = inputs[0].value;
+    row.cells[2].innerText = inputs[1].value;
+    row.cells[3].innerText = inputs[2].value;
+    row.cells[4].innerText = inputs[3].value;
+  }
+
+  function addNewSubject() {
+    const reminderBody = document.getElementById("reminderBody");
+    const inputs = document.querySelectorAll(".modal-content input");
+
+    let newRow = reminderBody.insertRow();
+    newRow.innerHTML = `
+      <td>${reminderBody.rows.length}</td>
+      <td>${inputs[0].value}</td>
+      <td>${inputs[1].value}</td>
+      <td>${inputs[2].value}</td>
+      <td>${inputs[3].value}</td>
+    `;
+  }
+
+  const reminderBody = document.getElementById("reminderBody");
+
+  // Add edit icons dynamically to each row
+  reminderBody.querySelectorAll("tr").forEach(row => {
+    let editIcon = document.createElement("i");
+    editIcon.classList.add("fas", "fa-edit");
+    editIcon.style.cursor = "pointer";
+    editIcon.addEventListener("click", function () {
+      enableEditing(row);
+    });
+
+    // Append edit icon to the last cell of each row
+    let lastCell = row.insertCell(-1);
+    lastCell.appendChild(editIcon);
+
+    function enableEditing(row) {
+  row.querySelectorAll("td").forEach((cell, index) => {
+    if (index > 0 && index < 5) { // Skip first column (#), allow Subject, Lecturer, Time, and Date
+      let currentText = cell.innerText;
+      let input = document.createElement("input");
+      input.type = "text";
+      input.value = currentText;
+      cell.innerHTML = "";
+      cell.appendChild(input);
+    }
+  });
+
+  // Ensure save button only gets added once
+  if (!row.querySelector(".save-btn")) {
+    let saveBtn = document.createElement("button");
+    saveBtn.innerText = "Save";
+    saveBtn.classList.add("save-btn");
+
+    saveBtn.addEventListener("click", function () {
+      saveChanges(row);
+    });
+
+    let lastCell = row.cells[row.cells.length - 1]; // Use existing last cell instead of adding a new one
+    lastCell.appendChild(saveBtn);
+  }
+}
+
+function saveChanges(row) {
+  row.querySelectorAll("td input").forEach(input => {
+    let cell = input.parentElement;
+    cell.innerText = input.value; // Replace input field with text
+  });
+
+  // Remove the save button after saving
+  let saveBtn = row.querySelector(".save-btn");
+  if (saveBtn) {
+    saveBtn.remove();
+  }
+}
+  });
+});
+
+
+
+
     document.querySelector(".back-button").addEventListener("click", function () {
         window.location.href = "studentinterface.html";
     });
@@ -66,7 +195,9 @@
     document.querySelector(".user-top-icon").addEventListener("click", function () {
       window.location.href = "profile2.html";
     });
-  });
+
+  
+
 </script>
 
 </body>

@@ -24,19 +24,19 @@
 
       <!-- Accepted Request -->
       <section class="column">
-        <h2>Accepted Request <span class="icon">👤</span></h2>
+        <h2>Accepted Request <span class="icon">👤➕</span></h2>
         <ul id="acceptedList"></ul>
       </section>
 
       <!-- Rejected Request -->
       <section class="column">
-        <h2>Rejected Request <span class="icon">👤✖</span></h2>
+        <h2>Rejected Request <span class="icon">👤✖️</span></h2>
         <ul id="rejectedList"></ul>
       </section>
     </div>
   </main>
 
-  <script >
+<script >
     document.addEventListener("DOMContentLoaded", function () {
     document.querySelector(".back-button").addEventListener("click", function () {
         window.location.href = "studentinterface.html";
@@ -45,41 +45,81 @@
     document.querySelector(".user-top-icon").addEventListener("click", function () {
       window.location.href = "profile2.html";
     });
+
+    document.addEventListener("click", function (event) {
+      if (event.target.classList.contains("accept-btn")) {
+      const index = event.target.getAttribute("data-index");
+      acceptTutor(parseInt(index));
+    }
+  
+      if (event.target.classList.contains("reject-btn")) {
+      const index = event.target.getAttribute("data-index");
+      rejectTutor(parseInt(index));
+  }
+});
+
+  document.addEventListener("click", function (event) {
+  if (event.target.classList.contains("info-btn")) {
+    const tutorName = event.target.getAttribute("data-name");
+    const tutorData = tutorSubjects[tutorName];
+
+    if (tutorData) {
+      alert(`Tutor Name: ${tutorName}\nSubject ID: ${tutorData.subjectId}\nSubject: ${tutorData.subject}`);
+    } else {
+      alert(`No subject data available for ${tutorName}`);
+    }
+  }
+});
+
     
     const pendingList = document.getElementById("pendingList");
-const acceptedList = document.getElementById("acceptedList");
-const rejectedList = document.getElementById("rejectedList");
+    const acceptedList = document.getElementById("acceptedList");
+    const rejectedList = document.getElementById("rejectedList");
 
-const pendingTutors = [
-  "Subiyamin", "Ahmad Manap", "Anita Kushair", "Amirul Hakim",
-  "Quratul Ain", "Fakhrul Razi", "Khaleed Kashmiri",
-  "Naim Ismail", "Abu Yamin", "Najwa Qismina"
-];
+    const tutorSubjects = {
+  "Subiyamin": { subject: "Bahasa Melayu", subjectId: "BM101" },
+  "Ahmad Manap": { subject: "English", subjectId: "ENG102" },
+  "Anita Kushair": { subject: "Computer Science", subjectId: "CS103" },
+  "Amirul Hakim": { subject: "Add Math", subjectId: "AM104" },
+  "Quratul Ain": { subject: "Biology", subjectId: "BIO105" },
+  "Fakhrul Razi": { subject: "Math", subjectId: "MATH106" },
+  "Khaleed Kashmiri": { subject: "Chemistry", subjectId: "CHEM107" },
+  "Naim Ismail": { subject: "Science", subjectId: "SCI108" },
+  "Abu Yamin": { subject: "Physics", subjectId: "PHY109" },
+  "Najwa Qismina": { subject: "History", subjectId: "HIS110" },
+  "Shahrul Bakti": { subject: "Geography", subjectId: "GEO111" },
+  "Ghazwan Hashim": { subject: "Moral Studies", subjectId: "MOR112" },
+  "Fathma Ilya": { subject: "Islamic Studies", subjectId: "ISL113" },
+  "Falisya Ali": { subject: "Programming", subjectId: "PROG114" },
+  "Abdul Razak": { subject: "Art", subjectId: "ART115" },
+  "Syakir Saadom": { subject: "PE (Physical Ed)", subjectId: "PE116" },
+  "Syafiq Saidin": { subject: "Design & Tech", subjectId: "DT117" }
+};
 
-const acceptedTutors = ["Shahrul Bakti", "Ghazwan Hashim", "Fathma Ilya", "Falisya Ali"];
-const rejectedTutors = ["Abdul Razak", "Syakir Saadom", "Syafiq Saidin"];
+    const pendingTutors = [
+      "Subiyamin", "Ahmad Manap", "Anita Kushair", "Amirul Hakim",
+      "Quratul Ain", "Fakhrul Razi", "Khaleed Kashmiri",
+      "Naim Ismail", "Abu Yamin", "Najwa Qismina"
+    ];
+
+    const acceptedTutors = ["Shahrul Bakti", "Ghazwan Hashim", "Fathma Ilya", "Falisya Ali"];
+    const rejectedTutors = ["Abdul Razak", "Syakir Saadom", "Syafiq Saidin"];
 
 function createListItem(name, index, status) {
   const li = document.createElement("li");
   li.innerHTML = `
     <span>${index + 1}</span>
     <span class="name">${name}</span>
-    ${status === "pending" ? `
-      <div class="icon-btns">
-        <span title="Info">ℹ️</span>
-        <span title="Accept" onclick="acceptTutor(${index})">✅</span>
-        <span title="Reject" onclick="rejectTutor(${index})">❌</span>
-      </div>
-    ` : status === "accepted" ? `
-      <div class="icon-btns">
+    <div class="icon-btns">
+      <span title="Info" class="info-btn" data-name="${name}">ℹ️</span>
+      ${status === "pending" ? `
+        <span title="Accept" class="accept-btn" data-index="${index}">✅</span>
+        <span title="Reject" class="reject-btn" data-index="${index}">❌</span>
+      ` : status === "accepted" ? `
         <span title="Message">💬</span>
         <span title="Call">📞</span>
-      </div>
-    ` : `
-      <div class="icon-btns">
-        <span title="Info">ℹ️</span>
-      </div>
-    `}
+      ` : ""}
+    </div>
   `;
   return li;
 }
