@@ -10,11 +10,11 @@
 </head>
 <body>
     <div class="bar">
-    <button class="back-btn">← BACK TO HOME</button>
+    <button class="back-btn" id="back-btn">← BACK TO HOME</button>
 
     <div class="right-group">
       <label class="text">Don't have any account? new member</label>
-      <button class="signup-btn">SIGN UP</button>
+      <button class="signup-btn" id="signupButton">SIGN UP</button>
     </div>
   </div>
   <div class="center-wrapper">
@@ -48,6 +48,22 @@
             </nav>
         </article>
     </section></div>
+    <script>
+  // Wait until the page is fully loaded
+  document.addEventListener("DOMContentLoaded", function () {
+    const signupBtn = document.getElementById("signupButton");
+        const backBtn = document.getElementById("back-btn");
+
+
+    signupBtn.addEventListener("click", function () {
+      window.location.href = "signup.html";
+    });
+    backBtn.addEventListener("click", function () {
+      window.location.href = "mainpage.html";
+    });
+  });
+</script>
+
    
     <footer >
         <p class="footer">2025 LumiLearnHub. All rights reserved.</p>

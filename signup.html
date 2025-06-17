@@ -9,11 +9,11 @@
 </head>
 <body>
     <div class="bar">
-    <button class="back-btn">← BACK TO HOME</button>
+    <button class="back-btn" id="back-btn">← BACK TO HOME</button>
 
     <div class="right-group">
       <label class="text">Already have an account?</label>
-      <button class="login-btn">LOG IN</button>
+      <button class="login-btn" id="login-btn">LOG IN</button>
     </div>
   </div>
 <div class="center-wrapper">
@@ -41,14 +41,31 @@
 <br><label class="register">Register As</label>
         <nav>
         <ul>
-            <li class="tutor"><a href="">TUTOR</a></li>
-            <li class="student"><a href="">STUDENT</a></li>
+            <li class="tutor"><a href="registertutor.html">TUTOR</a></li>
+            <li class="student"><a href="registerstudent.html">STUDENT</a></li>
         </ul>
     </nav>
 
     </article>
 </section>
 </div>
+ <script>
+  // Wait until the page is fully loaded
+    document.addEventListener("DOMContentLoaded", function () {
+    const loginBtn = document.getElementById("login-btn");
+        const backBtn = document.getElementById("back-btn");
+
+
+    loginBtn.addEventListener("click", function () {
+      window.location.href = "login.html";
+    });
+    backBtn.addEventListener("click", function () {
+      window.location.href = "mainpage.html";
+    });
+   
+  });
+</script>
+
 <footer>
     <p class="footer">2025 LumiLearnHub. All rights reserved. </p>
 </footer>
