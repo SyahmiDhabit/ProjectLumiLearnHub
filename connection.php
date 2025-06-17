@@ -1,14 +1,17 @@
 <?php
-$servername= "localhost:3301";
-$user = 'lumiLearn';
-$pass = '1234';
-$db = 'student_lumilearn';
+$servername = "localhost";
+$username = "lumiLearn";
+$password = "1234";
+$database = "student_lumilearn";
+$port = 3306;
 
-$conn = new mysqli( $user, $pass, $db);
- if($conn->connect_error){
-  die("Unable to connect" .$conn->connect_error);
+// ✅ Correct order: host, user, password, database, port
+$conn = new mysqli($servername, $username, $password, $database, $port);
 
- } echo "Connected successfully";
+// ✅ Error check
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
 
-
+echo "Connected successfully";
 ?>
