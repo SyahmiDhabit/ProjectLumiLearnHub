@@ -9,6 +9,8 @@
      
 </head>
 <body>
+    <?php 
+    ?>
     <div class="bar">
     <button class="back-btn">← BACK TO HOME</button>
 

@@ -9,7 +9,9 @@
 </head>
 <body>
 
-
+<?php
+include('connection.php');
+?>
    <div class="bar">
     <nav class="navbar">
         <!-- Left: Logo/Title -->
