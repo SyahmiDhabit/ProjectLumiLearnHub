@@ -94,6 +94,32 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
+    let selected = localStorage.getItem("selectedPackage");
+if (selected) {
+  let { subject, day, timeSlot } = JSON.parse(selected);
+
+  const validDays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"];
+  const validTimes = [
+    "8.30am - 10.30am",
+    "12.30pm - 2.30pm",
+    "4.30pm - 6.30pm",
+    "9.30pm - 10.30pm",
+    "11.30pm - 12.30am"
+  ];
+
+  let timeIndex = -1;
+  document.querySelectorAll(".schedule thead th").forEach((th, index) => {
+    if (th.textContent.trim() === timeSlot) timeIndex = index;
+  });
+
+  document.querySelectorAll(".schedule tbody tr").forEach(row => {
+    if (row.cells[0].textContent.trim() === day) {
+      row.cells[timeIndex].textContent = subject;
+    }
+  });
+
+  localStorage.removeItem("selectedPackage"); // Clear after use
+}
     // Back to home button
     document.querySelector(".back-button").addEventListener("click", function () {
         window.location.href = "studentinterface.html";
@@ -157,34 +183,9 @@
         return true;
     }
 
-    // ✅ Add Subject to Schedule with Validation
     document.querySelector(".icon-btn.add").addEventListener("click", function () {
-        let subject = prompt("Enter new subject name:");
-        let day = prompt("Enter the day (e.g., 'Monday'):");
-        let timeSlot = prompt("Enter the time slot (e.g., '8.30am - 10.30am'):");
-
-        if (!validateInput(subject, day, timeSlot)) return;
-
-        let table = document.querySelector(".schedule tbody");
-        let rowFound = false;
-        let timeIndex = -1;
-
-        // Get the correct column index for the time slot
-        document.querySelectorAll(".schedule thead th").forEach((th, index) => {
-            if (th.textContent.trim() === timeSlot) {
-                timeIndex = index; // Save correct column index
-            }
-        });
-
-        table.querySelectorAll("tr").forEach(row => {
-            if (row.cells[0].textContent.trim() === day) { // Match the correct row by day
-                rowFound = true;
-                row.cells[timeIndex].textContent = subject; // Insert subject into correct time slot
-            }
-        });
-
-        if (!rowFound) alert("Invalid day entered. Try again.");
-    });
+  window.open("choosepackage.html", "_blank", "width=600,height=600");
+});
 
     // ✅ Edit Existing Schedule Entry with Validation
     document.querySelector(".icon-btn.edit").addEventListener("click", function () {

@@ -49,7 +49,8 @@
     <span class="close-btn">&times;</span>
     <h2 id="subject-title">Subject Details</h2>
     <p><strong>Subject ID:</strong> <span id="subject-id"></span></p>
-    <p><strong>Tutor Name:</strong> <span id="tutor-name"></span></p>
+    <p><strong>Description:</strong> <span id="subject-description"></span></p>
+    <button id="enroll-btn">Enroll</button>
   </div>
   </div>
 
@@ -108,31 +109,31 @@
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const subjectDetails = {
-  "Bahasa Melayu": { id: "BM101", tutor: "Subiyamin" },
-  "English": { id: "ENG102", tutor: "Ahmad Manap" },
-  "Computer Science": { id: "CS103", tutor: "Anita Kushair" },
-  "Add Math": { id: "AM104", tutor: "Amirul Hakim" },
-  "Biology": { id: "BIO105", tutor: "Quratul Ain" },
-  "Math": { id: "MATH106", tutor: "Fakhrul Razi" },
-  "Chemistry": { id: "CHEM107", tutor: "Khaleed Kashmiri" },
-  "Science": { id: "SCI108", tutor: "Naim Ismail" },
-  "Physics": { id: "PHY109", tutor: "Abu Yamin" },
-  "History": { id: "HIS110", tutor: "Najwa Qismina" },
-  "Geography": { id: "GEO111", tutor: "Shahrul Bakti" },
-  "Moral Studies": { id: "MOR112", tutor: "Ghazwan Hashim" },
-  "Islamic Studies": { id: "ISL113", tutor: "Fathma Ilya" },
-  "Programming": { id: "PROG114", tutor: "Falisya Ali" },
-  "Art": { id: "ART115", tutor: "Abdul Razak" },
-  "PE (Physical Ed)": { id: "PE116", tutor: "Syakir Saadom" },
-  "Design & Tech": { id: "DT117", tutor: "Syafiq Saidin" },
-  "Literature": { id: "LIT118", tutor: "Subiyamin" },
-  "Economics": { id: "ECO119", tutor: "Ahmad Manap" },
-  "Account": { id: "ACC120", tutor: "Anita Kushair" },
-  "Business": { id: "BUS121", tutor: "Amirul Hakim" },
-  "Music": { id: "MUS122", tutor: "Quratul Ain" },
-  "Basic Math": { id: "BMATH123", tutor: "Fakhrul Razi" },
-  "Civics": { id: "CIV124", tutor: "Khaleed Kashmiri" },
-  "ICT": { id: "ICT125", tutor: "Naim Ismail" }
+  "Bahasa Melayu": { id: "BM101", description: "Fundamentals of the Malay language and literature." },
+  "English": { id: "ENG102", description: "Grammar, vocabulary, and composition in English." },
+  "Computer Science": { id: "CS103", description: "Intro to programming, data structures, and algorithms." },
+  "Add Math": { id: "AM104", description: "Advanced algebra, calculus, and trigonometry." },
+  "Biology": { id: "BIO105", description: "Study of living organisms, cells, and systems." },
+  "Math": { id: "MATH106", description: "Core math concepts: algebra, geometry, and statistics." },
+  "Chemistry": { id: "CHEM107", description: "Chemical reactions, atoms, and periodic trends." },
+  "Science": { id: "SCI108", description: "Integrated science: physics, chemistry, and biology." },
+  "Physics": { id: "PHY109", description: "Motion, forces, energy, and electricity." },
+  "History": { id: "HIS110", description: "Exploration of world and Malaysian history." },
+  "Geography": { id: "GEO111", description: "Maps, landscapes, climate, and natural resources." },
+  "Moral Studies": { id: "MOR112", description: "Values, ethics, and character building." },
+  "Islamic Studies": { id: "ISL113", description: "Understanding Islamic principles and practices." },
+  "Programming": { id: "PROG114", description: "Problem-solving through coding and logic." },
+  "Art": { id: "ART115", description: "Creative expression through visual arts." },
+  "PE (Physical Ed)": { id: "PE116", description: "Fitness, teamwork, and physical wellbeing." },
+  "Design & Tech": { id: "DT117", description: "Basic technical drawing and hands-on design." },
+  "Literature": { id: "LIT118", description: "Appreciating stories, poetry, and drama." },
+  "Economics": { id: "ECO119", description: "Understanding markets, scarcity, and production." },
+  "Account": { id: "ACC120", description: "Bookkeeping, financial statements, and audits." },
+  "Business": { id: "BUS121", description: "Foundations of marketing, management, and entrepreneurship." },
+  "Music": { id: "MUS122", description: "Rhythm, melody, and musical performance." },
+  "Basic Math": { id: "BMATH123", description: "Arithmetic, fractions, and basic problem-solving." },
+  "Civics": { id: "CIV124", description: "Roles of citizens, government, and community." },
+  "ICT": { id: "ICT125", description: "Introduction to computers, software, and digital skills." }
 };
 
   const searchInput = document.querySelector(".search-bar input");
@@ -143,21 +144,34 @@
   
   const subjectTitle = document.getElementById("subject-title");
   const subjectId = document.getElementById("subject-id");
-  const tutorName = document.getElementById("tutor-name");
+  
 
-  subjectButtons.forEach(button => {
-    button.addEventListener("click", function () {
-      const subject = button.textContent.trim();
-      
-      if (subjectDetails[subject]) {
-        subjectTitle.textContent = subject;
-        subjectId.textContent = subjectDetails[subject].id;
-        tutorName.textContent = subjectDetails[subject].tutor;
-        
-        modal.style.display = "block";
-      }
-    });
+  const subjectDescription = document.getElementById("subject-description");
+
+subjectButtons.forEach(button => {
+  button.addEventListener("click", function () {
+    const subject = button.textContent.trim();
+    if (subjectDetails[subject]) {
+      subjectTitle.textContent = subject;
+      subjectId.textContent = subjectDetails[subject].id;
+      subjectDescription.textContent = subjectDetails[subject].description;
+      modal.style.display = "block";
+    }
   });
+});
+
+  document.getElementById("enroll-btn").addEventListener("click", function () {
+    const subjectID = document.getElementById("subject-id").textContent;
+
+    fetch("enroll_subject.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: `subjectID=${subjectID}`
+    })
+    .then(response => response.text())
+    .then(data => {
+        alert(data); // Show response from PHP
+    });
 
   closeBtn.addEventListener("click", function () {
     modal.style.display = "none";
@@ -218,6 +232,7 @@
     });
 
     
+  });
 });
 </script>
 
