@@ -2,31 +2,31 @@
 session_start();
 require('connection.php');
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $adminID = $_POST['adminID'];
-    $usrNameAdmin = $_POST['usrNameAdmin'];
-    $passAdmin = $_POST['passAdmin'];
-    $emlAdmin = $_POST['emlAdmin'];
+// Collect admin form data
+$adminUser  = $_POST['adminUserName'];
+$adminPass  = $_POST['adminpassword'];
+$adminEmail = $_POST['adminemail'];
 
-    $hashedPassword = password_hash($passAdmin, PASSWORD_DEFAULT);
+// Hash the password securely
+$hashedPassword = password_hash($adminPass, PASSWORD_DEFAULT);
 
-    $sql = "INSERT INTO admin (adminID, usrNameAdmin, passAdmin, emlAdmin)
-            VALUES (?, ?, ?, ?)";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ssss", $adminID, $usrNameAdmin, $hashedPassword, $emlAdmin);
+// Use prepared statement to insert data
+$stmt = $conn->prepare("INSERT INTO admin (username, password, email) VALUES (?, ?, ?)");
 
-    if ($stmt->execute()) {
-        // Simpan adminID dalam session
-        $_SESSION['adminID'] = $adminID;
-
-        // Redirect ke student.php
-        header("Location: student.php");
-        exit;
-    } else {
-        echo "Error: " . $stmt->error;
-    }
-
-    $stmt->close();
-    $conn->close();
+if ($stmt === false) {
+    die("Prepare failed: " . $conn->error);
 }
+
+// Bind the correct variables
+$stmt->bind_param("sss", $adminUser, $hashedPassword, $adminEmail);
+
+if ($stmt->execute()) {
+    echo "✅ New admin account created successfully.";
+    echo "<meta http-equiv='refresh' content='3;URL=login.php'>";
+} else {
+    echo "❌ Error: " . $stmt->error;
+}
+
+$stmt->close();
+$conn->close();
 ?>

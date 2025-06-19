@@ -20,48 +20,48 @@
     <h1>ABOUT YOU</h1>
 
     <!-- Form submits data to registertutor.php -->
-    <form action="registerstutor.php" method="post">
+    <form action="tutor.php" method="post" enctype="multipart/form-data">
         <div>
             <label for="fname">Full Name</label>
-            <input type="text" id="fname" name="fname" placeholder="Your Fullname" required>
+            <input type="text" id="tutorFullName" name="tutorFullName" placeholder="Your Fullname" required>
         </div>
 
         <div>
             <label for="uname">Username</label>
-            <input type="text" id="uname" name="uname" placeholder="Your Username" required>
+            <input type="text" id="usernameTutor" name="usernameTutor" placeholder="Your Username" required>
         </div>
 
         <div>
           <label for="password">Password</label>
-          <input name="password" type="password" placeholder="Your Password" required>
+          <input name="passwordTutor" id="passwordTutor" type="password" placeholder="Your Password" required>
         </div>
 
         <div>
             <label for="age">Age</label>
-            <input type="number" id="age" name="age" min="13" max="30" placeholder="Your Age" required>
+            <input type="number" id="tutorAge" name="tutorAge" min="13" max="30" placeholder="Your Age" required>
         </div>
 
         <div>
             <label for="dob">Birth of Date</label>
-            <input type="date" id="dob" name="dob" required>
+            <input type="date" id="tutorDob" name="tutorDob" required>
         </div>
 
         <div>
             <label>Gender</label>
             <div class="gender-options">
-                <input type="radio" id="male" name="gender" value="Male"> <label for="male">Male</label>
-                <input type="radio" id="female" name="gender" value="Female"> <label for="female">Female</label>
+                <input type="radio" id="male" name="tutorGen" value="Male"> <label for="male">Male</label>
+                <input type="radio" id="female" name="tutorGen" value="Female"> <label for="female">Female</label>
             </div>
         </div>
 
         <div>
             <label for="notel">Phone Number</label>
-            <input type="tel" id="notel" name="notel" placeholder="+601x-xxxxxxx" required>
+            <input type="tel" id="tutorNum" name="tutorNum" placeholder="+601x-xxxxxxx" required>
         </div>
 
         <div>
             <label for="country">Country</label>
-            <select id="country" name="country">
+            <select id="tutorCountry" name="tutorCountry">
                 <option value="Malaysia">Malaysia</option>
                 <option value="Singapore">Singapore</option>
                 <option value="Philippine">Philippine</option>
@@ -71,12 +71,12 @@
 
         <div>
             <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="Your Email" required>
+            <input type="email" id="emailTutor" name="emailTutor" placeholder="Your Email" required>
         </div>
 
         <div class="full-width">
             <label for="bio">Bio</label>
-            <textarea id="bio" name="bio" placeholder="Type your message here..." required></textarea>
+            <textarea id="tutorBio" name="tutorBio" placeholder="Type your message here..." required></textarea>
         </div>
 
         <div class="full-width" style="text-align: center;">

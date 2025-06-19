@@ -2,34 +2,28 @@
 session_start();
 require('connection.php');
 
-
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $tutorID = $_POST['tutorID'];
     $tutorFullnm = $_POST['tutorFullName'];
+     $usernameTutor = $_POST['usernameTutor'];
+      $passwordTutor =  $_POST['passwordTutor'];
     $tutorAge = $_POST['tutorAge'];
+     $tutorDob = $_POST['tutorDob'];
     $tutorGen = $_POST['tutorGen'];
-    $tutorDob = $_POST['tutorDob'];
     $tutorNum = $_POST['tutorNum'];
     $tutorCoun = $_POST['tutorCountry'];
-    $tutorBio = $_POST['tutorBio'];
-     $emailTutor = $_POST['emailTutor'];
-    $usernameTutor = $_POST['usernameTutor'];
-    $passwordTutor =  $_POST['passwordTutor'];
+    $emailTutor = $_POST['emailTutor'];
+    $tutorBio = $_POST['tutorBio']; 
 
-    $sql = "INSERT INTO tutor (tutorID, tutorFullname, tutorAge, tutorGen, tutorDob, tutorNum, tutorCountry, tutorBio, adminID, usernameTutor, passwordTutor, emailTutor)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    $hashedPasswordtutor = password_hash($passwordTutor, PASSWORD_DEFAULT);
+$stmt = $conn->prepare("INSERT INTO tutor (fullName, username, password, age, dob, gender, phoneNumber, country, email, bio) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ssisssssssss", $tutorID, $tutorFullnm, $tutorAge, $tutorGen, $tutorDob, $tutorNum, $tutorCoun, $tutorBio, $adminID, $usernameTutor, $passwordTutor, $emailTutor);
+$stmt->bind_param("ssssssssss", $tutorFullnm, $usernameTutor, $hashedPasswordtutor, $tutorAge, $tutorDob, $tutorGen, $tutorNum, $tutorCoun, $emailTutor, $tutorBio);
 
-    if ($stmt->execute()) {
-        echo "Tutor berjaya disimpan.";
-    } else {
-        echo "Ralat: " . $stmt->error;
-    }
-
-    $stmt->close();
-    $conn->close();
+if ($stmt->execute()) {
+    echo "New record created successfully";
+    echo "<meta http-equiv='refresh' content='3;URL=index.php'>";
+} else {
+    echo "Error: " . $stmt->error;
 }
+$stmt->close();
+$conn->close();
 ?>

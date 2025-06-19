@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Registration</title>
+    <title>Tutor Registration</title>
     <link rel="stylesheet" href="register.css" type="text/css">
 </head>
 
@@ -13,79 +13,78 @@
 
         <div class="right-group">
             <span class="text">Already have an account?</span>
-            <button class="login-btn">LOG IN</button>
+            <button class="login-btn">LOG IN STUDENT</button>
         </div>
     </div>
 
     <h1>ABOUT YOU</h1>
 
-    <!-- This form submits to registerstudent.php using POST method -->
-    <form action="registerstudent.php" method="post">
-        <div>
-            <label for="fname">Full Name</label>
-            <input type="text" id="fname" name="fname" placeholder="Your Fullname" required>
-        </div>
+    <!-- Form submits data to registertutor.php -->
+  <form action="student.php" method="post" enctype="multipart/form-data">
+    <div>
+        <label for="studentFullName">Full Name</label>
+        <input type="text" id="studentFullName" name="studentFullName" placeholder="Your Fullname" required>
+    </div>
 
-        <div>
-            <label for="uname">Username</label>
-            <input type="text" id="uname" name="uname" placeholder="Your Username" required>
-        </div>
+    <div>
+        <label for="usernamestudent">Username</label>
+        <input type="text" id="usernamestudent" name="usernamestudent" placeholder="Your Username" required>
+    </div>
 
-        <div>
-          <label for="password">Password</label>
-          <input name="password" type="password" placeholder="Your Password" required>
-        </div>
+    <div>
+        <label for="passwordstudent">Password</label>
+        <input name="passwordstudent" id="passwordstudent" type="password" placeholder="Your Password" required>
+    </div>
 
-        <div>
-            <label for="age">Age</label>
-            <input type="number" id="age" name="age" min="13" max="30" placeholder="Your Age" required>
-        </div>
+    <div>
+        <label for="studentAge">Age</label>
+        <input type="number" id="studentAge" name="studentAge" min="5" max="30" placeholder="Your Age" required>
+    </div>
 
-        <div>
-            <label for="dob">Birth of Date</label>
-            <input type="date" id="dob" name="dob" required>
-        </div>
+    <div>
+        <label for="studentDob">Birth of Date</label>
+        <input type="date" id="studentDob" name="studentDob" required>
+    </div>
 
-        <div>
-            <label>Gender</label>
-            <div class="gender-options">
-                <input type="radio" id="male" name="gender" value="Male"> <label for="male">Male</label>
-                <input type="radio" id="female" name="gender" value="Female"> <label for="female">Female</label>
-            </div>
+    <div>
+        <label>Gender</label>
+        <div class="gender-options">
+            <input type="radio" id="male" name="studentGen" value="Male"> <label for="male">Male</label>
+            <input type="radio" id="female" name="studentGen" value="Female"> <label for="female">Female</label>
         </div>
+    </div>
 
-        <div>
-            <label for="notel">Phone Number</label>
-            <input type="tel" id="notel" name="notel" placeholder="+601x-xxxxxxx" required>
-        </div>
+    <div>
+        <label for="studentNum">Phone Number</label>
+        <input type="tel" id="studentNum" name="studentNum" placeholder="+601x-xxxxxxx" required>
+    </div>
 
-        <div>
-            <label for="country">Country</label>
-            <select id="country" name="country">
-                <option value="Malaysia">Malaysia</option>
-                <option value="Singapore">Singapore</option>
-                <option value="Philippine">Philippine</option>
-                <option value="Others">Others</option>
-            </select>
-        </div>
+    <div>
+        <label for="studentCountry">Country</label>
+        <select id="studentCountry" name="studentCountry">
+            <option value="Malaysia">Malaysia</option>
+            <option value="Singapore">Singapore</option>
+            <option value="Philippine">Philippine</option>
+            <option value="Others">Others</option>
+        </select>
+    </div>
 
-        <div>
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="Your Email" required>
-        </div>
-        
-        </div>
+    <div>
+        <label for="emailstudent">Email</label>
+        <input type="email" id="emailstudent" name="emailstudent" placeholder="Your Email" required>
+    </div>
 
-        <div class="full-width">
-            <label for="bio">Bio</label>
-            <textarea id="bio" name="bio" placeholder="Tell us about yourself..." required></textarea>
-        </div>
+    <div class="full-width">
+        <label for="studentBio">Bio</label>
+        <textarea id="studentBio" name="studentBio" placeholder="Type your message here..." required></textarea>
+    </div>
 
-        <div class="full-width" style="text-align: center;">
-            <span>Proceed to register as a Student?</span>
-            <input type="submit" id="submit" value="PROCEED">
-        </div>
-    </form>
+    <div class="full-width" style="text-align: center;">
+        <span>Proceed to register as a Student?</span>
+        <input type="submit" id="submit" value="PROCEED">
+    </div>
+</form>
+
 </body>
 
 <footer>
