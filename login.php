@@ -23,7 +23,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($result && $result->num_rows === 1) {
         $user = $result->fetch_assoc();
 
-        // ✅ Use correct column name from your database
+        // DEBUGGING (REMOVE AFTER TESTING)
+        // echo "<p>Entered password: $passwordTutor</p>";
+        // echo "<p>Stored hash: " . $user['password'] . "</p>";
+
         if (password_verify($passwordTutor, $user['password'])) {
             $_SESSION['tutorID'] = $user['tutorID'];
             $_SESSION['tutorFullName'] = $user['fullName'];
@@ -33,7 +36,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             echo "<p style='color:red;'>Incorrect password.</p>";
             echo "<meta http-equiv='refresh' content='3;URL=index.php'>";
         }
-
     } else {
         echo "<p style='color:red;'>Email not found.</p>";
         echo "<meta http-equiv='refresh' content='3;URL=index.php'>";
