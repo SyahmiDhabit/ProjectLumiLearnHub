@@ -2,13 +2,7 @@
 session_start();
 require('connection.php');
 
-// Semak jika adminID ada dalam session
-if (!isset($_SESSION['adminID'])) {
-    echo "Akses tidak dibenarkan. Sila daftar sebagai admin dahulu.";
-    exit;
-}
 
-$adminID = $_SESSION['adminID']; // Ambil dari session
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $tutorID = $_POST['tutorID'];
@@ -19,9 +13,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $tutorNum = $_POST['tutorNum'];
     $tutorCoun = $_POST['tutorCountry'];
     $tutorBio = $_POST['tutorBio'];
+     $emailTutor = $_POST['emailTutor'];
     $usernameTutor = $_POST['usernameTutor'];
-    $passwordTutor = password_hash($_POST['passwordTutor'], PASSWORD_DEFAULT);
-    $emailTutor = $_POST['emailTutor'];
+    $passwordTutor =  $_POST['passwordTutor'];
 
     $sql = "INSERT INTO tutor (tutorID, tutorFullname, tutorAge, tutorGen, tutorDob, tutorNum, tutorCountry, tutorBio, adminID, usernameTutor, passwordTutor, emailTutor)
             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
