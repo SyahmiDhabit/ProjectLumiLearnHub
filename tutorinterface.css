@@ -9,13 +9,13 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #c43636;
+  background-color: #ac5656;
   padding: 10px 20px;
   border-bottom-right-radius: 20px;
   border-bottom-left-radius: 20px;
   border: solid 3px;
   border-top: none;
-  border-color: #a62121;
+  border-color: #621818;
 }
 
 .brand {
@@ -24,6 +24,8 @@ body {
   padding: 7px 20px;
   border-radius: 15px;
   font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .welcome {
@@ -76,6 +78,11 @@ body {
   cursor: pointer;
   color: #000000;
   font-weight: bold;
+  text-decoration: none;
+}
+
+.menu-item:hover {
+  background-color: #f19595;
 }
 
 .menu-icon {
@@ -107,6 +114,7 @@ body {
   cursor: pointer;
   font-weight: bold;
   font-size: 17px;
+  text-decoration: none;
 }
 
 .content-section {

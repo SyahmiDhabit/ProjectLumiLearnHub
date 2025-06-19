@@ -1,22 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mystudent - Tutor</title>
-</head>
-<body>
-    <!DOCTYPE html>
-<html lang="en">
-<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tutor Dashboard</title>
+  <title>My Student - Tutor</title>
   <link rel="stylesheet" href="mystudenttutor.css" />
 </head>
 <body>
   <div class="header">
-    <div class="brand">LumiLearnHub</div>
+    <a href="tutorinterface.html" class="brand">LumiLearnHub</a>
     <div class="welcome">WELCOME TUTOR!</div>
     <div class="profile-icon"></div>
   </div>
@@ -24,53 +16,60 @@
   <div class="container">
     <div class="sidebar">
       <div class="menu-title">MENU OPTION</div>
-      <div class="menu-item">
+
+      <a href="scheduletutor.html" class="menu-item">
         <span>My Schedule</span>
-        <img src="image/calendaricon.png" alt="calender icon" class="menu-icon">
-      </div>
-      <div class="menu-chosen">
+        <img src="image/calendaricon.png" alt="calendar icon" class="menu-icon">
+      </a>
+
+      <a href="mystudenttutor.html" class="menu-chosen">
         <span>My Student</span>
         <img src="image/usericon.png" alt="user icon" class="menu-icon">
-      </div>
-      <div class="menu-item">
+      </a>
+
+      <a href="remindertutor.html" class="menu-item">
         <span>Reminder</span>
         <img src="image/clockicon.png" alt="clock icon" class="menu-icon">
-      </div>
-      <div class="menu-item">
+      </a>
+
+      <a href="requeststudenttutor.html" class="menu-item">
         <span>Student Request</span>
         <img src="image/requesticon.png" alt="request icon" class="menu-icon">
-      </div>
-      <div class="menu-item">
+      </a>
+
+      <a href="feedbacktutor.html" class="menu-item">
         <span>Feedback</span>
-        <img src="image/feedbackicon.png" alt="feedback icon" class="menu-icon  ">
-      </div>
+        <img src="image/feedbackicon.png" alt="feedback icon" class="menu-icon">
+      </a>
     </div>
 
     <div class="main-content">
       <div class="top-buttons">
-        <button class="top-btn">Availability</button>
-        <button class="top-btn">Application for Subject Tutoring</button>
+        <a href="availabletutor.html"><button class="top-btn">Availability</button></a>
+        <a href="applicationtutor.html"><button class="top-btn">Application for Subject Tutoring</button></a>
       </div>
 
-    <div class="schedule-tittle">
-    <table class="schedule-table">
-      <span class="title-size">My Student</span>
-      <thead>
-        <tr>
-        <th>No</th>
-        <th>Subject</th>
-        <th>Student</th>
-      </tr>
-      </thead>
-      <tbody>
-        <tr><td>1</td><td>Computer Science</td><td>Athirah Ahmad</td></tr>
-        <tr><td>2</td><td>Computer Science</td><td>Zulaikha Najwa</td></tr>
-        <tr><td>3</td><td>Computer Science</td><td>Syahmi Saidi</td></tr>
-        <tr><td>4</td><td>Mathematic</td><td>Iqbal Mazlan</td></tr>
-        <tr><td>5</td><td>Mathematic</td><td>Khair Aziz</td></tr>
-        <tr><td>6</td><td>Computer Science</td><td>Asyraaf Zamri</td></tr>
-      </tbody>
-    </table>
+      <div class="schedule-tittle">
+        <span class="title-size">My Student</span>
+        <table class="schedule-table">
+          <thead>
+            <tr>
+              <th>No</th>
+              <th>Subject</th>
+              <th>Student</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1</td><td>Computer Science</td><td>Athirah Ahmad</td></tr>
+            <tr><td>2</td><td>Computer Science</td><td>Zulaikha Najwa</td></tr>
+            <tr><td>3</td><td>Computer Science</td><td>Syahmi Saidi</td></tr>
+            <tr><td>4</td><td>Mathematic</td><td>Iqbal Mazlan</td></tr>
+            <tr><td>5</td><td>Mathematic</td><td>Khair Aziz</td></tr>
+            <tr><td>6</td><td>Computer Science</td><td>Asyraaf Zamri</td></tr>
+          </tbody>
+        </table>
+      </div>
     </div>
+  </div>
 </body>
 </html>

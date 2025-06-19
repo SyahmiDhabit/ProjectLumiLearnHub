@@ -1,84 +1,106 @@
-/* availabletutor.css */
 body {
-  font-family: Arial, sans-serif;
   margin: 0;
-  background-color: #835c5a;
+  font-family: Arial, sans-serif;
+  background-color: #7f5d5d;
   color: white;
 }
 
+/* HEADER */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #a44f4d;
+  background-color: #ac5656;
   padding: 10px 20px;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border: solid 3px;
+  border-top: none;
+  border-color: #621818;
 }
 
 .brand {
-  background-color: #e8c5c5;
+  background: #d8b4b4;
   color: black;
-  padding: 8px 16px;
+  padding: 7px 20px;
+  border-radius: 15px;
   font-weight: bold;
-  border-radius: 10px;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .welcome {
-  font-size: 24px;
-  font-weight: bold;
+  font-size: 27px;
+  font-weight: bolder;
 }
 
 .profile-icon {
   width: 40px;
   height: 40px;
-  background-color: #623433;
   border-radius: 50%;
+  background-image: url('image/PpLogo.jpg');
+  background-size: cover;
+  background-position: center;
 }
 
+/* CONTAINER */
 .container {
   display: flex;
+  margin: 20px;
 }
 
+/* SIDEBAR */
 .sidebar {
-  background-color: #623433;
+  background-color: #8b4444;
+  border: 3px solid black;
+  border-radius: 10px;
   padding: 20px;
-  width: 240px;
-  height: 100vh;
-  box-sizing: border-box;
-  border: 2px solid black;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .menu-title {
-  background-color: #3f2020;
-  color: white;
-  font-weight: bold;
-  padding: 10px;
+  background-color: #621818;
   text-align: center;
-  margin-bottom: 20px;
+  padding: 10px;
   border-radius: 10px;
-  border: 2px solid #ffffff;
+  font-weight: bold;
+  border: 3px solid #e68e8e;
 }
 
-.menu-item, .menu-chosen {
-  background-color: #ca5f5b;
-  padding: 10px;
-  margin-bottom: 15px;
+.menu-item {
+  background-color: #da6666;
+  padding: 25px;
   border-radius: 10px;
-  font-weight: bold;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 10px;
+  cursor: pointer;
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.menu-item:hover {
+  background-color: #f19595;
 }
 
 .menu-icon {
-  width: 20px;
-  height: 20px;
+  margin-left: auto;
+  width: 24px;
+  height: 24px;
+  object-fit: cover;
 }
 
+/* MAIN CONTENT */
 .main-content {
   flex: 1;
-  padding: 20px;
+  padding: 0 20px;
 }
 
+/* BUTTONS AT THE TOP */
 .top-buttons {
   display: flex;
   gap: 20px;
@@ -87,78 +109,65 @@ body {
 
 .top-btn {
   flex: 1;
-  background-color: #d6bdbd;
-  padding: 10px;
+  background-color: #d3c9c9;
   border: none;
-  font-weight: bold;
-  cursor: pointer;
+  padding: 15px;
   border-radius: 10px;
-  font-size: 16px;
+  font-weight: bold;
+  color: black;
+  cursor: pointer;
+  font-size: 17px;
+  text-decoration: none;
 }
 
 .top-btn.selected {
-  border: 4px solid #662727;
+  border: 5px solid #621818;
+  text-decoration: none;
 }
 
-.availability-wrapper {
-  display: flex;
-  align-items: flex-start;
-  gap: 20px;
+/* AVAILABILITY SECTION */
+.availability-section h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 5px;
 }
 
-.availability-section {
-  flex: 1;
+.availability-section p {
+  color: #eee;
+  font-weight: normal;
+  margin-bottom: 20px;
 }
 
+/* AVAILABILITY TABLE */
 .availability-table {
   width: 100%;
   border-collapse: collapse;
-  background-color: #4d4d4d;
-  color: white;
-  border-radius: 12px;
+  background-color: #e8bcbc;
+  border-radius: 15px;
   overflow: hidden;
+  font-weight: bold;
 }
 
 .availability-table th,
 .availability-table td {
-  border: 1px solid #333;
-  padding: 12px;
+  padding: 15px;
   text-align: center;
+  border: 2px solid #7a7a7a;
 }
 
 .availability-table th {
-  background-color: #c5b3b3;
-  color: black;
+  background-color: #d3c9c9;
+  color: #000;
+}
+
+.availability-table td {
+  background-color: #646464;
+  color: white;
 }
 
 .x-icon {
-  width: 20px;
-  height: 20px;
-  cursor: pointer;
-}
-
-.availability-toolbar {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  position: relative;
-  top: 20px;
-}
-
-.toolbar-btn {
-  background-color: white;
-  border: none;
-  border-radius: 12px;
-  padding: 12px;
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-
-.toolbar-btn img {
-  width: 24px;
-  height: 24px;
+  width: 21px;
+  height: 21px;
+  object-fit: contain;
 }

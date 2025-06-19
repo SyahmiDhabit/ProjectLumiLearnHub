@@ -24,6 +24,8 @@ body {
   padding: 7px 20px;
   border-radius: 15px;
   font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .welcome {
@@ -76,6 +78,11 @@ body {
   cursor: pointer;
   color: #000000;
   font-weight: bold;
+  text-decoration: none;
+}
+
+.menu-item:hover {
+  background-color: #f19595;
 }
 
 .menu-chosen {
@@ -89,6 +96,7 @@ body {
   color: #000000;
   font-weight: bold;
   border: 7px solid #621818;
+  text-decoration: none;
 }
 
 .menu-icon {
@@ -120,6 +128,7 @@ body {
   cursor: pointer;
   font-weight: bold;
   font-size: 17px;
+  text-decoration: none;
 }
 
 .schedule-tittle {

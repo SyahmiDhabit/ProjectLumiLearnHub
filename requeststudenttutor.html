@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tutor Dashboard</title>
+  <title>Tutor Dashboard - Student Request</title>
   <link rel="stylesheet" href="requeststudenttutor.css" />
 </head>
 <body>
   <div class="header">
-    <div class="brand">LumiLearnHub</div>
+    <a href="tutorinterface.html" class="brand">LumiLearnHub</a>
     <div class="welcome">WELCOME TUTOR!</div>
     <div class="profile-icon"></div>
   </div>
@@ -16,17 +16,37 @@
   <div class="container">
     <div class="sidebar">
       <div class="menu-title">MENU OPTION</div>
-      <div class="menu-item"> <span>My Schedule</span> <img src="image/calendaricon.png" alt="calender icon" class="menu-icon"> </div>
-      <div class="menu-item"> <span>My Student</span> <img src="image/usericon.png" alt="user icon" class="menu-icon"> </div>
-      <div class="menu-item"> <span>Reminder</span> <img src="image/clockicon.png" alt="clock icon" class="menu-icon"> </div>
-      <div class="menu-chosen"> <span>Student Request</span> <img src="image/requesticon.png" alt="request icon" class="menu-icon"> </div>
-      <div class="menu-item"> <span>Feedback</span> <img src="image/feedbackicon.png" alt="feedback icon" class="menu-icon"> </div>
+
+      <a href="scheduletutor.html" class="menu-item">
+        <span>My Schedule</span>
+        <img src="image/calendaricon.png" alt="calendar icon" class="menu-icon">
+      </a>
+
+      <a href="mystudenttutor.html" class="menu-item">
+        <span>My Student</span>
+        <img src="image/usericon.png" alt="user icon" class="menu-icon">
+      </a>
+
+      <a href="remindertutor.html" class="menu-item">
+        <span>Reminder</span>
+        <img src="image/clockicon.png" alt="clock icon" class="menu-icon">
+      </a>
+
+      <a href="requeststudenttutor.html" class="menu-chosen">
+        <span>Student Request</span>
+        <img src="image/requesticon.png" alt="request icon" class="menu-icon">
+      </a>
+
+      <a href="feedbacktutor.html" class="menu-item">
+        <span>Feedback</span>
+        <img src="image/feedbackicon.png" alt="feedback icon" class="menu-icon">
+      </a>
     </div>
 
     <div class="main-content">
       <div class="top-buttons">
-        <button class="top-btn">Availability</button>
-        <button class="top-btn">Application for Subject Tutoring</button>
+      <a href="availabletutor.html" class="top-btn selected">Availability</a>
+      <a href="applicationtutor.html" class="top-btn selected">Application for Subject Tutoring</a>
       </div>
 
       <div class="requests">
